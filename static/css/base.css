@@ -1,3 +1,57 @@
 * {
     font-size: 10px;
 }
+
+/*--------------------------------------------Navbar*/
+.navbar {
+    background-color: #3a413a;
+    padding: 0 1rem;
+}
+
+.navbar-title {
+    font-size: 3rem;
+    color: #FFF;
+}
+
+.nav-item {
+    padding: 0.5rem;
+}
+
+.nav-link h4 {
+    font-size: 1.6rem;
+    color: #FFF;
+}
+
+.nav-icon {
+    font-size: 1.6rem;
+    color: #FFF;
+}
+
+.menu-icon {
+    padding: 0.5rem;
+}
+
+.dropdown-item {
+    text-align: right;
+    font-size: 1.5rem;
+    background-color: #3a413a;
+    color: #FFF;
+    border: none;
+    padding: 0.5rem;
+}
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #3a413a;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:active:focus {
+    background-color: #3a413a;
+    color: #6c7570;
+    border: none;
+}
