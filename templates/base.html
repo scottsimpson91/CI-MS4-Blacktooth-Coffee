@@ -15,7 +15,8 @@
 
         {% block corecss %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        {% endblock %}
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+            {% endblock %}
 
         {% block extra_css %}
         {% endblock %}
@@ -32,7 +33,9 @@
         <title>Blacktooth Coffee {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
-        <header class="container-fluid fixed-top"></header>
+        <header class="container-fluid fixed-top pl-0 pr-0">
+            <h1>Blacktooth Coffee</h1>
+        </header>
     
         {% if messages %}
             <div class="message-container"></div>
