@@ -14,7 +14,7 @@
 }
 
 .nav-item {
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
 }
 
 .nav-link h4 {
@@ -32,12 +32,12 @@
 }
 
 .dropdown-item {
-    text-align: right;
     font-size: 1.5rem;
     background-color: #3a413a;
     color: #FFF;
     border: none;
     padding: 0.5rem;
+    padding-left: 2.5rem;
 }
 
 .dropdown-menu {
@@ -45,6 +45,7 @@
     margin: 0;
     border: none;
     background-color: #3a413a;
+    width: 100%;
 }
 
 .dropdown-item:hover,

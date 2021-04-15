@@ -37,19 +37,42 @@
 <!--==================== NAVBAR - Code from MS3 ====================--> 
         <header class="container-fluid fixed-top pl-0 pr-0">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="{% url 'home' %}">
                     <h1 class="navbar-title">Blacktooth Coffee</h1>
                 </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" id="navbar-button" data-target="#Navbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                <div class="collapse navbar-collapse flex-grow-1 text-right" id="Navbar">
+                <div class="collapse navbar-collapse flex-grow-1" id="Navbar">
                     <ul class="navbar-nav ml-auto flex-nowrap">
                         <li class="list-inline-item nav-item dropdown">
-                                <a href="#" class="nav-link" id="account-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user"></i></div>
-                                        <h4>My Account<i class="menu-icon fas fa-caret-down"></i></h4>
-                                </a>
+                            <a href="#" class="nav-link" id="coffee-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                    <h4>Our Coffee<i class="menu-icon fas fa-caret-down"></i></h4>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="coffee-options">
+                                <a href="" class="dropdown-item">Regular</a>
+                                <a href="" class="dropdown-item">Decaf</a>
+                            </div>
+                        </li>
+                        <li class="list-inline-item nav-item">
+                            <a href="#" class="nav-link">
+                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <h4>About Us</h4>
+                            </a>
+                        </li>
+                        <li class="list-inline-item nav-item">
+                            <a href="#" class="nav-link">
+                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <h4>Contact Us</h4>
+                            </a>
+                        </li>
+
+                        <li class="list-inline-item nav-item dropdown">
+                            <a href="#" class="nav-link" id="account-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user"></i></div>
+                                    <h4>My Account<i class="menu-icon fas fa-caret-down"></i></h4>
+                            </a>
                             <div class="dropdown-menu" aria-labelledby="account-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
