@@ -1,12 +1,27 @@
 * {
     font-size: 10px;
+    padding: 0;
+    margin: 0;
 }
 /*--------------------------------------------Special Padding/Margins/Text*/
+.row {
+    margin: 0;
+}
+
 a:hover,
 a:active,
 a:focus,
 a:active:focus {
     color: #000;
+}
+
+.heading-hr {
+    background-color: #000;
+    height: 0.2rem;
+    width: 10rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin: auto;
 }
 /*--------------------------------------------Navbar*/
 .navbar {
@@ -68,6 +83,11 @@ a:active:focus {
     min-height: 35vh;
     max-height: 70vh;
 }
+
+#homepage-coffee-beans {
+    padding: 1rem;
+    padding-top: 5rem;
+}
 /*--------------------------------------------Home Page*/
 .shop-now-banner {
     width: 100%;
@@ -76,4 +96,76 @@ a:active:focus {
     color: #000;
     background-color: #FFD966;
     text-transform: uppercase;
+}
+.main-page-heading {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 3rem;
+    text-transform: uppercase;
+}
+.homepage-paragraph {
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+
+footer {
+    background-color: #3A413A;
+    min-height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+.footer-col {
+    padding: 0;
+}
+#app-store-icons {
+    margin: auto;
+    display: block;
+    padding: 0.5rem;
+}
+.social-icons-container {
+    text-align: center;
+}
+.social-icon {
+    color: #FFF;
+    font-size: 3rem;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+}
+.social-icon:hover {
+    color: #118AB2;
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+.copyright {
+    font-size: 1.2rem;
+    color: #FFF;
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 7rem 0;
+}
+.footer-content a {
+    font-size: 1.4rem;
+    padding: 1rem;
+    color: #FFF;
+    display: block;
+    text-align: center;
+}
+
+.footer-heading {
+    padding: 1rem;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    margin: 0;
 }

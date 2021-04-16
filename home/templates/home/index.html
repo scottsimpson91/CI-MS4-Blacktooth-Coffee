@@ -10,10 +10,57 @@
             </div>
         </a>
 <!--======================================== HERO IMAGE ========================================-->
-        <img src="{{ MEDIA_URL }}homepage_background_cropped.jpg" alt="" class="img-fluid" id="hero-image">
+        <img src="{{ MEDIA_URL }}homepage_background_cropped.jpg" class="img-fluid" id="hero-image" alt="coffee" >
 <!--======================================== HOME PAGE CONTENT ========================================-->
-        <div class="col-12">
-            
+        <div class="row">
+            <div class="col-xl-8">
+                <h3 class="main-page-heading">Crafted by Connoisseurs</h3>
+                <hr class="heading-hr">
+                <p class="homepage-paragraph">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <p class="homepage-paragraph">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <p class="homepage-paragraph">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+            </div>
+            <div class="col-xl-4">
+                <img src="{{ MEDIA_URL }}homepage_coffee_beans.png" class="img-fluid" id="homepage-coffee-beans" alt="coffee beans">
+            </div>
+
         </div>
+<!--======================================== FOOTER - FROM MS3 ========================================-->    
+        <footer>
+            <div class="row">
+                <div class="col-12 col-xl-4 footer-col">
+                    <h5 class="footer-heading">Site Links:</h5>
+                    <p class="footer-content">
+                        <a href="">Shop Now</a>
+                        <a href="">About Us</a>
+                        <a href="">Contact Us</a>
+                    </p>
+                </div>
+                <div class="col-12 col-xl-4 footer-col">
+                    <h5 class="footer-heading">Socials:</h5>
+                    <div class="social-icons-container">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-square social-icon"></i>
+                        </a>
+                        <a href="https://twitter.com/?lang=en-gb" target="_blank">
+                            <i class="fab fa-twitter-square social-icon"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/home" target="_blank">
+                            <i class="fab fa-linkedin social-icon"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4 footer-col">
+                    <p class="copyright">&#169; Blacktooth Coffee 2021</p>
+                </div>                            
+            </div>
+        </footer>
+
     </div>
 {% endblock %}
