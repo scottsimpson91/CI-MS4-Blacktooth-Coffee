@@ -1,7 +1,13 @@
 * {
     font-size: 10px;
 }
-
+/*--------------------------------------------Special Padding/Margins/Text*/
+a:hover,
+a:active,
+a:focus,
+a:active:focus {
+    color: #000;
+}
 /*--------------------------------------------Navbar*/
 .navbar {
     background-color: #3a413a;
@@ -35,7 +41,8 @@
     font-size: 1.5rem;
     background-color: #3a413a;
     color: #FFF;
-    border: none;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
     padding: 1rem;
 }
 
@@ -54,4 +61,19 @@
     background-color: #3a413a;
     color: #6c7570;
     border: none;
+}
+/*--------------------------------------------Images*/
+#hero-image {
+    width: 100%;
+    min-height: 35vh;
+    max-height: 70vh;
+}
+/*--------------------------------------------Home Page*/
+.shop-now-banner {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    color: #000;
+    background-color: #FFD966;
+    text-transform: uppercase;
 }
