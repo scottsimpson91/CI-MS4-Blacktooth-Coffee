@@ -7,14 +7,19 @@
 .row {
     margin: 0;
 }
-
 a:hover,
 a:active,
 a:focus,
 a:active:focus {
     color: #000;
 }
-
+.heading {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 3rem;
+    text-transform: uppercase;
+}
 .heading-hr {
     background-color: #000;
     height: 0.2rem;
@@ -23,35 +28,32 @@ a:active:focus {
     margin-bottom: 2rem;
     margin: auto;
 }
+.text-muted {
+    font-size: 1.2rem;
+}
 /*--------------------------------------------Navbar*/
 .navbar {
     background-color: #3a413a;
     padding: 0 1rem;
 }
-
 .navbar-title {
     font-size: 3rem;
     color: #FFF;
 }
-
 .nav-item {
     padding: 0.5rem 2.5rem;
 }
-
 .nav-link h4 {
     font-size: 1.6rem;
     color: #FFF;
 }
-
 .nav-icon {
     font-size: 1.6rem;
     color: #FFF;
 }
-
 .menu-icon {
     padding: 0.5rem;
 }
-
 .dropdown-item {
     font-size: 1.5rem;
     background-color: #3a413a;
@@ -60,7 +62,6 @@ a:active:focus {
     border-bottom: 1px solid #FFF;
     padding: 1rem;
 }
-
 .dropdown-menu {
     padding: 0;
     margin: 0;
@@ -68,7 +69,6 @@ a:active:focus {
     background-color: #3a413a;
     width: 100%;
 }
-
 .dropdown-item:hover,
 .dropdown-item:active,
 .dropdown-item:focus,
@@ -97,19 +97,11 @@ a:active:focus {
     background-color: #FFD966;
     text-transform: uppercase;
 }
-.main-page-heading {
-    font-size: 2rem;
-    text-align: center;
-    padding: 1rem;
-    padding-top: 3rem;
-    text-transform: uppercase;
-}
 .homepage-paragraph {
     padding: 2rem;
     font-size: 1.4rem;
 }
-
-
+/*--------------------------------------------Footer*/
 footer {
     background-color: #3A413A;
     min-height: 5rem;
@@ -168,4 +160,19 @@ footer {
     font-size: 1.6rem;
     text-decoration: underline;
     margin: 0;
+}
+/*--------------------------------------------Product Page*/
+.form-control {
+    border: 1px solid #000;
+    font-size: 1.4rem;
+}
+.search-container {
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+.product-section {
+    padding-top: 2rem;
+}
+.product-heading {
+    font-size: 1.6rem;
 }

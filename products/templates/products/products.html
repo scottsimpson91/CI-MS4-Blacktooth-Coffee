@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid pl-0 pr-0">
+<!--======================================== SEARCH BAR - FROM BOUTIQUE ADO ========================================-->
+        <div class="search-container row">
+            <div class="col-12">
+                <form method="GET" action="">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--======================================== PRODUCTS - FROM BOUTIQUE ADO ========================================-->
+        <div class="product-container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="heading">Products</h2>
+                    <hr class="heading-hr">
+                </div>
+            </div>
+            <div class="product-section row">
+                {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card-picture">
+                            {% if product.image %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <h4 class="product-heading">{{ product.name }}</h4>
+                            <h4 class="product-heading">£ {{ product.price }}</h4>
+                            {% if product.rating %}
+                                <small class="text-muted"><i class="fas fa-star"></i>{{ product.rating }} / 5</small>
+                            {% else %}
+                                <small class="text-muted">No Rating</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
