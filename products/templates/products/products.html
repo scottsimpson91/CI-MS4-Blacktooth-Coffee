@@ -20,14 +20,20 @@
                 </form>
             </div>
         </div>
-<!--======================================== PRODUCTS - FROM BOUTIQUE ADO ========================================-->
-        <div class="product-container">
+<!--======================================== SORT BY ========================================-->
+        <div class="sort-by-container">
             <div class="row">
-                <div class="col-12">
-                    <h2 class="heading">Coffee</h2>
-                    <hr class="heading-hr">
+                <div class="col-12 sort-by-body">
+                    <h2 class="sort-by-heading">Sort By :</h2>
+                    <a href="{% url 'products' %}?sort=price&direction=asc">Price</a>
+                    <a href="{% url 'products' %}?sort=rating&direction=desc">Rating</a>
+                    <a href="{% url 'products' %}?sort=category&direction=asc">Category</a>
+                    <a href="{% url 'products' %}">All Products</a>
                 </div>
             </div>
+        </div>
+<!--======================================== PRODUCTS - FROM BOUTIQUE ADO ========================================-->
+        <div class="product-container">
             <div class="product-section row">
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
