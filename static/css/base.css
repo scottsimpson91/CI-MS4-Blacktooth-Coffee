@@ -169,6 +169,7 @@ footer {
 }
 .product-section {
     padding-top: 2rem;
+    min-height: 60vh;
 }
 .product-heading {
     font-size: 1.6rem;
