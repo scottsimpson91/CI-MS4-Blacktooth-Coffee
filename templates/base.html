@@ -52,8 +52,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="coffee-options">
                                 <a href="{% url 'products' %}" class="dropdown-item">All Coffee</a>
-                                <a href="" class="dropdown-item">Regular</a>
-                                <a href="" class="dropdown-item">Decaf</a>
+                                <a href="{% url 'products' %}?category=coffee" class="dropdown-item">Regular</a>
+                                <a href="{% url 'products' %}?category=decaf_coffee" class="dropdown-item">Decaf</a>
                             </div>
                         </li>
                         <li class="list-inline-item nav-item">
