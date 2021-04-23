@@ -20,14 +20,38 @@
                 </form>
             </div>
         </div>
-<!--======================================== SORT BY ========================================-->
+<!--======================================== SORT BY/FILTERING - FROM BOUTIQUE ADO ========================================-->
         <div class="sort-by-container">
             <div class="row">
                 <div class="col-12 sort-by-body">
                     <h2 class="sort-by-heading">Sort By :</h2>
-                    <a href="{% url 'products' %}?sort=price&direction=asc">Price</a>
-                    <a href="{% url 'products' %}?sort=rating&direction=desc">Rating</a>
-                    <a href="{% url 'products' %}">All Products</a>
+                    <select id="sort-selector" class="custom-select custom-select-sm-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                    </select>   
+                </div>
+                <div class="col-12 category-selected-container">
+                    {% for c in current_categories %}
+                        <p class="category-selected-text">Selected:</p>
+                        <a class="category-badge" href="{% url 'products' %}?category={{ c.name }}">
+                            <span class="category-selected-box">{{ c.friendly_name }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+                <div class="col-12 results-container">
+                    <p class="results-text">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            <a href="{% url 'products' %}">Products Home</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
                 </div>
             </div>
         </div>
@@ -50,8 +74,34 @@
                         <div class="product-body">
                             <h4 class="product-heading">{{ product.name }}</h4>
                             <h4 class="product-heading">£ {{ product.price }}</h4>
+                            {% if product.category %}
+                                <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
+                                    <h4 class="product-heading"><i class="fas fa-tag category-icon"></i>{{ product.category.friendly_name }}</h4>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
+<!--======================================== HR FOR LOOP -FROM BOUTIQUE ADO ========================================-->
+                    {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
                 {% endfor %}
             </div>
         </div>

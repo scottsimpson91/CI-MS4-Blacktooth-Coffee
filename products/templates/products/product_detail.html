@@ -39,6 +39,11 @@
                 <div class="product-body-section row">
                     <div class="col">
                         <h4 class="product-details-main-heading">{{ product.name }}</h4>
+                        {% if product.category %}
+                            <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
+                                <h4 class="product-details-heading"><i class="fas fa-tag category-icon-product-details"></i>{{ product.category.friendly_name }}</h4>
+                            </a>
+                        {% endif %}
                         <h4 class="product-details-heading">Origin - {{ product.origin.name }}</h4>
                         <h4 class="product-details-heading">Region - {{ product.region }}</h4>
                         <h4 class="product-details-heading">Variety - {{ product.variety }}</h4>
