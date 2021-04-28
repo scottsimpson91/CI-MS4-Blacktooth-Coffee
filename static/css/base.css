@@ -32,6 +32,11 @@ a:active:focus {
     padding: 2rem;
     padding-bottom: 1rem;
 }
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*--------------------------------------------Navbar*/
 .navbar {
     background-color: #3a413a;
@@ -228,7 +233,6 @@ footer {
 }
 .product-order-main-heading {
     font-size: 3rem;
-    padding-left: 2rem;
     padding-bottom: 2rem;
     font-weight: bold;
     text-align: center;
