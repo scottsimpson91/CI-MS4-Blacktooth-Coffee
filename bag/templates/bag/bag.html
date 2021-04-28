@@ -9,11 +9,69 @@
                 <hr class="heading-hr">
             </div>
         </div>
+<!--======================================== BAG CONTENTS - FROM BOUTIQUE ADO ========================================-->
         <div class="row">
             <div class="col-12 bag-body">
                 {% if bag_items %}
-                    <div class="table-responsive">
-                        {{ bag_items }}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="bag-table-header">Product Info</th>
+                                    <th scope="col" class="bag-table-header"></th>
+                                    <th scope="col" class="bag-table-header">Price</th>
+                                    <th scope="col" class="bag-table-header">Qty</th>
+                                    <th scope="col" class="bag-table-header">Subtotal</th>
+                                </tr>
+                            </thead>
+                            {% for item in bag_items %}
+                                <tr class="bag-table-row">
+                                    <td>
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                    </td>
+                                    <td>
+                                        <p class="bag-table-paragraph">{{ item.product.name }}</p>
+                                        <p class="bag-table-paragraph">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>
+                                    <td>
+                                        <p class="bag-table-paragraph">{{ item.product.price }}</p>
+                                    </td>
+                                    <td>
+                                        <p class="bag-table-paragraph">{{ item.quantity }}</p>
+                                    </td>
+                                    <td>
+                                        <p class="bag-table-paragraph">£{{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <hr>
+                                    <h6 class="bag-total-heading"><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6 class="bag-total-heading">Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="bag-total-heading"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                    <hr>
+                                        <p class="bag-total-delivery-heading">
+                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-lg keep-shopping-button">
+                                        Keep Shopping
+                                    </a>
+                                    <a href="" class="btn btn-lg secure-checkout-button">
+                                        Secure Checkout
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 {% else %}
                     <p class="bag-text">Your bag is empty.</p>

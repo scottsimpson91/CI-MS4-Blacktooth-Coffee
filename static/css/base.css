@@ -307,9 +307,6 @@ footer {
 .bag-container {
     min-height: 70vh;
 }
-.bag-body {
-    padding: 4rem;
-}
 .bag-text {
     font-size: 1.6rem;
 }
@@ -318,4 +315,30 @@ footer {
     border: 2px solid #000;
     font-size: 1.6rem;
     margin-top: 2rem;
+    font-weight: bold;
+}
+.bag-table-paragraph {
+    font-size: 1.4rem;
+}
+.table thead th {
+    padding-bottom: 2rem;
+    font-size: 1.6rem;
+}
+.secure-checkout-button {
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+.bag-total-heading, .bag-total-heading strong {
+    font-size: 1.4rem;
+}
+
+.bag-total-delivery-heading, .bag-total-delivery-heading strong {
+    font-size: 1.6rem;
+}
+.fa-lock {
+    font-size: 1.6rem;
 }
