@@ -228,9 +228,6 @@ footer {
     font-size: 1.6rem;
     margin-right: 1rem;
 }
-.form-group {
-    padding: 1rem;
-}
 .product-order-heading {
     font-size: 1.6rem;
 }
@@ -266,10 +263,6 @@ footer {
     border: 1px solid #000;
     background-color: #000;
     color: #FFF;
-}
-.qty_input {
-    font-size: 1.8rem;
-    padding: 1rem;
 }
 /*--------------------------------------------Sort/Filtering Menu*/
 .sort-by-body {
@@ -351,9 +344,16 @@ footer {
     font-size: 1.6rem;
 }
 .table-borderless td {
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 .bag-body {
     padding-bottom: 4rem;
     padding-top: 4rem;
+}
+.update-link, .remove-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.bag-update-links {
+    margin: 1rem;
 }
