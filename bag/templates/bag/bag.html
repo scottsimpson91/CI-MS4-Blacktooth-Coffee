@@ -10,7 +10,7 @@
             <hr class="heading-hr">
         </div>
     </div>
-    <!--======================================== BAG CONTENTS - FROM BOUTIQUE ADO ========================================-->
+<!--======================================== BAG CONTENTS - FROM BOUTIQUE ADO ========================================-->
     <div class="row">
         <div class="col-12 col-md-10 offset-md-1 bag-body">
             {% if bag_items %}
@@ -22,6 +22,7 @@
                         <div class="col-sm-6 col-md-3">
                             <p class="bag-paragraph">{{ item.product.name }}</p>
                             <p class="bag-paragraph">£{{ item.product.price }}</p>
+                            <p class="bag-paragraph"><small>SKU: {{ item.product.sku|upper }}</small></p>
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">

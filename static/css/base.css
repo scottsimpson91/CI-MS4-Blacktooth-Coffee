@@ -302,7 +302,6 @@ footer {
     font-size: 1.6rem;
     background-color: #FFD966;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .product-order-container {
@@ -449,6 +448,7 @@ footer {
 
 .toast-body {
     font-size: 1.4rem;
+    padding: 1rem;
 }
 
 .toast-header strong, .toast-header {
@@ -457,4 +457,59 @@ footer {
 
 .close-icon {
     font-size: 2rem;
+}
+
+.bag-toast-paragraph, .bag-toast-paragraph strong, .bag-toast-paragraph span {
+    font-size: 1.4rem;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ - Part of Toasts*/
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap - Part of Toasts */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
 }
