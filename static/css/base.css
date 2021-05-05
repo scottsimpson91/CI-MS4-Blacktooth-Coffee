@@ -3,16 +3,19 @@
     padding: 0;
     margin: 0;
 }
+
 /*--------------------------------------------Special Padding/Margins/Text*/
 .row {
     margin: 0;
 }
+
 a:hover,
 a:active,
 a:focus,
 a:active:focus {
     color: #000;
 }
+
 .heading {
     font-size: 2rem;
     text-align: center;
@@ -20,6 +23,7 @@ a:active:focus {
     padding-top: 3rem;
     text-transform: uppercase;
 }
+
 .heading-hr {
     background-color: #000;
     height: 0.2rem;
@@ -28,38 +32,47 @@ a:active:focus {
     margin-bottom: 2rem;
     margin: auto;
 }
+
 .search-container {
     padding: 2rem;
     padding-bottom: 1rem;
 }
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /*--------------------------------------------Navbar*/
 .navbar {
     background-color: #3a413a;
     padding: 0 1rem;
 }
+
 .navbar-title {
     font-size: 3rem;
     color: #FFF;
 }
+
 .nav-item {
     padding: 0.5rem 2.5rem;
 }
+
 .nav-link h4 {
     font-size: 1.6rem;
     color: #FFF;
 }
+
 .nav-icon {
     font-size: 1.6rem;
     color: #FFF;
 }
+
 .menu-icon {
     padding: 0.5rem;
 }
+
 .dropdown-item {
     font-size: 1.5rem;
     background-color: #3a413a;
@@ -68,6 +81,7 @@ a:active:focus {
     border-bottom: 1px solid #FFF;
     padding: 1rem;
 }
+
 .dropdown-menu {
     padding: 0;
     margin: 0;
@@ -75,6 +89,7 @@ a:active:focus {
     background-color: #3a413a;
     width: 100%;
 }
+
 .dropdown-item:hover,
 .dropdown-item:active,
 .dropdown-item:focus,
@@ -83,6 +98,7 @@ a:active:focus {
     color: #6c7570;
     border: none;
 }
+
 /*--------------------------------------------Images*/
 #hero-image {
     width: 100%;
@@ -94,6 +110,7 @@ a:active:focus {
     padding: 1rem;
     padding-top: 5rem;
 }
+
 /*--------------------------------------------Home Page*/
 .shop-now-banner {
     width: 100%;
@@ -103,10 +120,12 @@ a:active:focus {
     background-color: #FFD966;
     text-transform: uppercase;
 }
+
 .homepage-paragraph {
     padding: 2rem;
     font-size: 1.4rem;
 }
+
 /*--------------------------------------------Footer*/
 footer {
     background-color: #3A413A;
@@ -114,28 +133,34 @@ footer {
     width: 100%;
     margin-top: 2rem;
 }
+
 .footer-col {
     padding: 0;
 }
+
 #app-store-icons {
     margin: auto;
     display: block;
     padding: 0.5rem;
 }
+
 .social-icons-container {
     text-align: center;
 }
+
 .social-icon {
     color: #FFF;
     font-size: 3rem;
     padding: 1rem 0.5rem;
     text-decoration: none;
 }
+
 .social-icon:hover {
     color: #118AB2;
     transform: scale(1.2);
     transition: 0.2s;
 }
+
 .copyright {
     font-size: 1.2rem;
     color: #FFF;
@@ -144,13 +169,14 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin: 7rem 0;
 }
+
 .footer-content a {
     font-size: 1.4rem;
     padding: 1rem;
@@ -167,88 +193,110 @@ footer {
     text-decoration: underline;
     margin: 0;
 }
+
 /*--------------------------------------------Product Page*/
 .form-control {
     border: 1px solid #000;
     font-size: 1.4rem;
 }
+
 .product-section {
     padding-top: 2rem;
     min-height: 60vh;
 }
+
 .product-heading {
     font-size: 1.6rem;
     padding: 0.5rem;
 }
+
 .product-body {
     padding-bottom: 2rem;
 }
+
 .category-icon {
     margin-right: 1rem;
 }
+
 .category-link {
     color: #000;
 }
+
 .results-text {
     font-size: 1.4rem;
     text-align: center;
     padding: 1rem;
 }
+
 .results-text a {
     font-size: 1.4rem;
 }
+
 .results-text span {
     font-size: 1.4rem;
 }
+
 .results-text strong {
     font-size: 1.4rem;
 }
+
 .fa-search {
     font-size: 1.4rem;
 }
+
 /*--------------------------------------------Product Detail Page*/
 .product-image-section {
     padding-top: 4rem;
 }
+
 .product-details-main-heading {
     font-size: 3rem;
     padding-left: 2rem;
     padding-bottom: 2rem;
     font-weight: bold;
 }
+
 .product-details-heading {
     font-size: 1.6rem;
     padding-left: 2rem;
     padding-bottom: 2rem;
 }
+
 .product-details-image {
     padding-bottom: 4rem;
 }
+
 .category-icon-product-details {
     font-size: 1.6rem;
     margin-right: 1rem;
 }
+
 .product-order-heading {
     font-size: 1.6rem;
 }
+
 .product-order-main-heading {
     font-size: 3rem;
     padding-bottom: 2rem;
     font-weight: bold;
     text-align: center;
 }
+
 .product-order-small-heading {
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
 }
+
 #order-form {
     padding-top: 2rem;
 }
+
 .form-group-button {
     text-align: center;
     padding: 2rem;
 }
+
 .add-to-bag-button {
     border: 2px solid #000;
     font-size: 1.6rem;
@@ -256,40 +304,49 @@ footer {
     font-weight: bold;
     text-transform: uppercase;
 }
+
 .product-order-container {
     padding-bottom: 4rem;
 }
+
 .plus-minus-button {
     border: 1px solid #000;
     background-color: #000;
     color: #FFF;
 }
+
 /*--------------------------------------------Sort/Filtering Menu*/
 .sort-by-body {
     text-align: center;
     padding: 1rem;
 }
+
 .sort-by-body a {
     font-size: 1.4rem;
     padding: 1rem;
     color: #000;
 }
+
 .sort-by-heading {
     padding: 0.5rem;
 }
+
 .sort-by-container {
     background-color: #EEE;
     margin: 2rem 0;
 }
+
 #sort-selector {
     border: 1px solid #000;
     font-size: 1.4rem;
     justify-content: center;
     width: 50%;
 }
+
 #sort-selector option {
     font-size: 1.4rem;
 }
+
 .category-selected-box {
     border: 1px solid #000;
     font-size: 1.4rem;
@@ -298,62 +355,78 @@ footer {
     color: #000;
     font-weight: bold;
 }
+
 .category-selected-container {
     text-align: center;
     padding: 1rem;
 }
+
 .category-selected-text {
     font-size: 1.2rem;
 }
+
 /*--------------------------------------------Shopping Bag Page*/
 .bag-container {
     min-height: 70vh;
+    margin-bottom: 5rem;
 }
-.bag-text {
+
+.bag-body {
+    background-color: #EEE;
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+#bag-image {
+    height: 15rem;
+    width: 15rem;
+}
+
+.bag-paragraph {
     font-size: 1.6rem;
+    padding: 1rem 0;
 }
+
+.bag-hr {
+    margin: 2rem 0;
+    background-color: #000;
+}
+
+.form-group {
+    padding: 1rem 0;
+}
+
 .keep-shopping-button {
     background-color: #EEE;
     border: 2px solid #000;
     font-size: 1.6rem;
-    margin-top: 2rem;
+    margin: 2rem;
     font-weight: bold;
 }
-.bag-table-paragraph {
-    font-size: 1.4rem;
-}
-.table thead th {
-    padding-bottom: 2rem;
-    font-size: 1.6rem;
-}
+
 .secure-checkout-button {
     background-color: #FFD966;
     border: 2px solid #000;
     font-size: 1.6rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    margin: 2rem;
     font-weight: bold;
 }
+
 .bag-total-heading, .bag-total-heading strong {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
+
 .bag-total-delivery-heading, .bag-total-delivery-heading strong {
     font-size: 1.6rem;
 }
+
 .fa-lock {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
-.table-borderless td {
-    padding-top: 2rem;
-}
-.bag-body {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
-}
+
 .update-link, .remove-item {
     font-size: 1.2rem;
     cursor: pointer;
-}
-.bag-update-links {
-    margin: 1rem;
+    padding: 0.8rem;
 }
