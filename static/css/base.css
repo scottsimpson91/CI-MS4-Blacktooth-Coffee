@@ -430,3 +430,31 @@ footer {
     cursor: pointer;
     padding: 0.8rem;
 }
+
+/*--------------------------------------------Toasts*/
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.toast-body {
+    font-size: 1.4rem;
+}
+
+.toast-header strong, .toast-header {
+    font-size: 1.4rem;
+}
+
+.close-icon {
+    font-size: 2rem;
+}
