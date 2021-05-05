@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
 <div class="bag-container">
@@ -54,7 +55,7 @@
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">Remove</a>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <p class="bag-paragraph">Subtotal - £{{ item.product.price }}</p>
+                            <p class="bag-paragraph">Subtotal - £{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                     <hr class="bag-hr">
