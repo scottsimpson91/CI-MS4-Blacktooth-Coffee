@@ -8,6 +8,9 @@ from products.models import Product
 
 
 class Order(models.Model):
+    """ 
+    Model which contains a users order information 
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -56,6 +59,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Line item model referencing the products
+    """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
