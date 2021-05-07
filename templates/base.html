@@ -57,7 +57,7 @@
                             </div>
                         </li>
                         <li class="list-inline-item nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{% url 'about' %}" class="nav-link">
                                 <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
                                 <h4>About Us</h4>
                             </a>
@@ -134,8 +134,8 @@
                 <div class="col-12 col-xl-4 footer-col">
                     <h5 class="footer-heading">Site Links:</h5>
                     <p class="footer-content">
-                        <a href="">Shop Now</a>
-                        <a href="">About Us</a>
+                        <a href="{% url 'products' %}">Shop Now</a>
+                        <a href="{% url 'about' %}">About Us</a>
                         <a href="">Contact Us</a>
                     </p>
                 </div>
