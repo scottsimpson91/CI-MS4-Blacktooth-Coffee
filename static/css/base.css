@@ -513,3 +513,54 @@ footer {
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
+
+/*--------------------------------------------Checkout Page*/
+
+.checkout-container {
+    margin-bottom: 5rem;
+}
+
+.checkout-paragraph, .checkout-paragraph small, .checkout-paragraph strong  {
+    font-size: 1.4rem;
+}
+.fieldset-label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.text-info, .form-check-label {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.adjust-bag-button {
+    background-color: #EEE;
+    border: 1px solid #000;
+    margin-bottom: 1rem;
+}
+
+.adjust-bag-button span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.complete-order-button {
+    background-color: #FFD966;
+    border: 1px solid #000;
+    margin-bottom: 1rem;
+}
+
+.complete-order-button span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.checkout-card-charge, .checkout-card-charge strong {
+    font-size: 1.2rem;
+}
+.checkout-paragraph-summary {
+    font-size: 1.4rem;
+    margin-top: 5rem;
+}
