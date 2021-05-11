@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="contact-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading">Contact</h2>
+                <hr class="heading-hr">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2 contact-header">
+                <div class="contact-main-content">
+                    <h4 class="contact-heading">Want to contact us?</h6>
+                    <p class="contact-paragraph">Please complete the form below!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2 contact-body">
+                <form class="contact-form" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="contact-form">                    
+                        {{ contact_form|crispy }}
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-lg contact-form-button">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

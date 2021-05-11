@@ -8,8 +8,8 @@ from products.models import Product
 
 
 class Order(models.Model):
-    """ 
-    Model which contains a users order information 
+    """
+    Model which contains a users order information
     """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)

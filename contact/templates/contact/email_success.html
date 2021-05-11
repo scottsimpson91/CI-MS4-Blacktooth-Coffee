@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+ <div class="email-success-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="heading">Contact</h2>
+            <hr class="heading-hr">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 email-success-header">
+            <div class="contact-main-content">
+                <h4 class="email-success-heading">Email sent!</h6>
+                <p class="email-success-paragraph">Thanks for contacting us! We will reply to your message within 3 working days.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 email-success-body">
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    Home
+                </a>
+            </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
