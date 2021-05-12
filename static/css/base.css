@@ -199,7 +199,6 @@ footer {
 }
 
 /*--------------------------------------------Product Page*/
-
 .product-section {
     padding-top: 2rem;
     min-height: 60vh;
@@ -507,7 +506,6 @@ footer {
 }
 
 /*--------------------------------------------Checkout Page*/
-
 .checkout-container {
     margin-bottom: 5rem;
 }
@@ -547,7 +545,6 @@ footer {
     margin-top: 5rem;
 }
 /*--------------------------------------------Checkout Page*/
-
 #about-hero-image {
     opacity: 0.8;
     width: 100%;
@@ -568,8 +565,33 @@ footer {
     margin-bottom: 5rem;
 }
 
-/*--------------------------------------------Contact Page*/
+#loading-overlay {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 162, 184, .85);
+    z-index: 9999;
+}
 
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+#card-errors span {
+    font-size: 1.4rem;
+}
+
+#card-errors {
+    margin-bottom: 2rem;
+}
+/*--------------------------------------------Contact Page*/
 .contact-container {
     margin-bottom: 5rem;
 }
@@ -641,7 +663,6 @@ footer {
 }
 
 /*--------------------------------------------Forms*/
-
 label {
     font-size: 1.4rem;
 }
@@ -697,6 +718,11 @@ label {
 
 .stripe-style-input::placeholder {
     color: #aab7c4;
+}
+
+.form-check-inline .form-check-input {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 /*--------------------------------------------Checkout Success Page*/
