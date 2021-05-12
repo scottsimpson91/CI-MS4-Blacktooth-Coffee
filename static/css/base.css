@@ -199,10 +199,6 @@ footer {
 }
 
 /*--------------------------------------------Product Page*/
-.form-control {
-    border: 1px solid #000;
-    font-size: 1.4rem;
-}
 
 .product-section {
     padding-top: 2rem;
@@ -290,15 +286,6 @@ footer {
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
-}
-
-#order-form {
-    padding-top: 2rem;
-}
-
-.form-group-button {
-    text-align: center;
-    padding: 2rem;
 }
 
 .add-to-bag-button {
@@ -527,17 +514,6 @@ footer {
 .checkout-paragraph, .checkout-paragraph small, .checkout-paragraph strong  {
     font-size: 1.4rem;
 }
-.fieldset-label {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-decoration: underline;
-}
-
-.form-check-label, .form-check-label a {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
 
 .adjust-bag-button {
     background-color: #EEE;
@@ -609,10 +585,6 @@ footer {
     text-align: center;
 }
 
-label {
-    font-size: 1.4rem;
-}
-
 .contact-form-button {
     background-color: #FFD966;
     border: 2px solid #000;
@@ -665,4 +637,63 @@ label {
     font-size: 1.4rem;
     text-align: center;
     margin-top: 5rem;
+}
+
+/*--------------------------------------------Forms*/
+
+label {
+    font-size: 1.4rem;
+}
+
+.fieldset-label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+}
+
+.form-check-label, .form-check-label a {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border: 1px solid #000;
+    font-size: 1.4rem;
+}
+
+#order-form {
+    padding-top: 2rem;
+}
+
+.form-group-button {
+    text-align: center;
+    padding: 2rem;
+}
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 4rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid #DDD;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
 }
