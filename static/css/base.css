@@ -702,10 +702,38 @@ label {
 /*--------------------------------------------Checkout Success Page*/
 .checkout-success-container {
     min-height: 70vh;
+    margin-bottom: 5rem;
 }
 
 .checkout-success-paragraph, .checkout-success-paragraph strong {
     margin-top: 5rem;
     text-align: center;
     font-size: 1.4rem;
+}
+
+.checkout-success-wrapper {
+    background-color: #EEE;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.checkout-success-heading {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 1rem 0;
+}
+
+.checkout-summary-sub-heading, .checkout-summary-sub-heading strong {
+    font-size: 1.4rem;
+}
+
+.checkout-summary-hr:last-child {
+    display: none;
+}
+
+.checkout-summary-sub-heading-order-details, .checkout-summary-sub-heading-order-details strong {
+    font-size: 1.4rem;
+    margin: 2rem 0;
 }
