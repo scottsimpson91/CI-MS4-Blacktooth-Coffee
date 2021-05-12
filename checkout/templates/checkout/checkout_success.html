@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="checkout-success-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading">Thank You!</h2>
+                <hr class="heading-hr">
+            </div>
+        </div>
+<!--======================================== ORDER CONFIRMATION - FROM BOUTIQUE ADO ========================================-->
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2 mb-2">
+                <p class="checkout-success-paragraph">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            </div>
+        </div>
+<!--======================================== CHECKOUT SUMMARY - FROM BOUTIQUE ADO ========================================-->
+        <div class="ol-12 col-md-8 offset-md-2">
+            
+        </div>
+    </div>
+{% endblock %}

@@ -452,6 +452,7 @@ footer {
 
 .bag-toast-paragraph, .bag-toast-paragraph strong, .bag-toast-paragraph span {
     font-size: 1.4rem;
+    margin-top: 1rem;
 }
 
 .bag-notification-wrapper {
@@ -696,4 +697,15 @@ label {
 
 .stripe-style-input::placeholder {
     color: #aab7c4;
+}
+
+/*--------------------------------------------Checkout Success Page*/
+.checkout-success-container {
+    min-height: 70vh;
+}
+
+.checkout-success-paragraph, .checkout-success-paragraph strong {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 1.4rem;
 }
