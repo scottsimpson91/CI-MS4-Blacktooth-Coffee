@@ -694,10 +694,11 @@ label {
 }
 
 .StripeElement,
+.stripe-style-input,
 .stripe-style-input {
   box-sizing: border-box;
   height: 4rem;
-  padding: 1rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border: 2px solid #DDD;
   border-radius: 0px;
   background-color: white;
@@ -723,6 +724,15 @@ label {
 .form-check-inline .form-check-input {
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+
+select, select option {
+    font-size: 1.4rem;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 /*--------------------------------------------Checkout Success Page*/
