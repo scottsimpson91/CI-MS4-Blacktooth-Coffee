@@ -402,11 +402,13 @@ footer {
     font-weight: bold;
 }
 
-.bag-total-heading, .bag-total-heading strong {
+.bag-total-heading,
+.bag-total-heading strong {
     font-size: 1.6rem;
 }
 
-.bag-total-delivery-heading, .bag-total-delivery-heading strong {
+.bag-total-delivery-heading,
+.bag-total-delivery-heading strong {
     font-size: 1.6rem;
 }
 
@@ -414,7 +416,8 @@ footer {
     font-size: 1.4rem;
 }
 
-.update-link, .remove-item {
+.update-link,
+.remove-item {
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.8rem;
@@ -441,7 +444,8 @@ footer {
     padding: 1rem;
 }
 
-.toast-header strong, .toast-header {
+.toast-header strong,
+.toast-header {
     font-size: 1.4rem;
 }
 
@@ -449,7 +453,9 @@ footer {
     font-size: 2rem;
 }
 
-.bag-toast-paragraph, .bag-toast-paragraph strong, .bag-toast-paragraph span {
+.bag-toast-paragraph,
+.bag-toast-paragraph strong,
+.bag-toast-paragraph span {
     font-size: 1.4rem;
     margin-top: 1rem;
 }
@@ -462,10 +468,10 @@ footer {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ - Part of Toasts*/
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
@@ -510,7 +516,9 @@ footer {
     margin-bottom: 5rem;
 }
 
-.checkout-paragraph, .checkout-paragraph small, .checkout-paragraph strong  {
+.checkout-paragraph,
+.checkout-paragraph small,
+.checkout-paragraph strong {
     font-size: 1.4rem;
 }
 
@@ -536,7 +544,8 @@ footer {
     font-weight: bold;
 }
 
-.checkout-card-charge, .checkout-card-charge strong {
+.checkout-card-charge,
+.checkout-card-charge strong {
     font-size: 1.2rem;
 }
 
@@ -544,6 +553,7 @@ footer {
     font-size: 1.4rem;
     margin-top: 5rem;
 }
+
 /*--------------------------------------------Checkout Page*/
 #about-hero-image {
     opacity: 0.8;
@@ -566,8 +576,8 @@ footer {
 }
 
 #loading-overlay {
-	display: none;
-	position: fixed;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -577,7 +587,7 @@ footer {
 }
 
 .loading-spinner {
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -591,6 +601,7 @@ footer {
 #card-errors {
     margin-bottom: 2rem;
 }
+
 /*--------------------------------------------Contact Page*/
 .contact-container {
     margin-bottom: 5rem;
@@ -632,6 +643,7 @@ footer {
     margin-bottom: 5rem;
     min-height: 70vh;
 }
+
 .back-to-home-button {
     background-color: #FFD966;
     border: 2px solid #000;
@@ -702,25 +714,25 @@ label {
 .StripeElement,
 .stripe-style-input,
 .stripe-style-input {
-  box-sizing: border-box;
-  height: 4rem;
-  padding: 0.8rem 1.2rem;
-  border: 2px solid #DDD;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+    box-sizing: border-box;
+    height: 4rem;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #DDD;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+    background-color: #fefde5 !important;
 }
 
 .stripe-style-input::placeholder {
@@ -732,7 +744,8 @@ label {
     margin-bottom: 1rem;
 }
 
-select, select option {
+select,
+select option {
     font-size: 1.4rem;
 }
 
@@ -747,7 +760,8 @@ select option[value=""] {
     margin-bottom: 5rem;
 }
 
-.checkout-success-paragraph, .checkout-success-paragraph strong {
+.checkout-success-paragraph,
+.checkout-success-paragraph strong {
     margin-top: 5rem;
     text-align: center;
     font-size: 1.4rem;
@@ -767,7 +781,8 @@ select option[value=""] {
     margin: 1rem 0;
 }
 
-.checkout-summary-sub-heading, .checkout-summary-sub-heading strong {
+.checkout-summary-sub-heading,
+.checkout-summary-sub-heading strong {
     font-size: 1.4rem;
 }
 
@@ -775,7 +790,67 @@ select option[value=""] {
     display: none;
 }
 
-.checkout-summary-sub-heading-order-details, .checkout-summary-sub-heading-order-details strong {
+.checkout-summary-sub-heading-order-details,
+.checkout-summary-sub-heading-order-details strong {
     font-size: 1.4rem;
     margin: 2rem 0;
+}
+
+/*--------------------------------------------All Auth Pages*/
+
+.all-auth-container {
+    min-height: 70vh;
+    margin-top: 5rem;
+    font-size: 1.4rem;
+}
+
+.all-auth-paragraph,
+.all-auth-paragraph a,
+.all-auth-paragraph strong {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.all-auth-button, .primaryAction {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.secondaryAction {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #EEE;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.all-auth-header {
+    padding-bottom: 3rem;
+}
+
+.all-auth-body {
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.verified, .unverified, .primary {
+    font-size: 1.2rem;
+    padding-left: 2rem;
+}
+
+.buttonHolder {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.ctrlHolder {
+    margin: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
 }
