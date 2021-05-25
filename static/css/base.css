@@ -795,6 +795,15 @@ select option[value=""] {
     margin: 2rem 0;
 }
 
+.back-to-profile-button {
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
 /*--------------------------------------------All Auth Pages*/
 
 .all-auth-container {
@@ -858,6 +867,7 @@ select option[value=""] {
 
 .profile-container {
     margin-bottom: 5rem;
+    min-height: 70vh;
 }
 
 .update-info-button {
@@ -896,4 +906,17 @@ select option[value=""] {
 
 #id_default_country option:first-child {
     color: #aab7c4;
+}
+
+.profile-order-heading {
+    font-size: 1.2rem;
+}
+
+.order-history {
+    max-height: 416px; /* Height of profile form + submit button */
+    overflow-y: auto;
+}
+
+.profile-table td, .profile-table td span, .profile-table td a, .profile-table td ul, .profile-table td ul li {
+    font-size: 1.2rem;
 }

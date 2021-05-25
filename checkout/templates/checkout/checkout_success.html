@@ -68,12 +68,21 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-12">
-                        <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            Home
-                        </a>
+                        {% if from_profile %}
+                            <a href="{% url 'profile' %}" class="btn btn-lg back-to-profile-button">
+                                <span class="icon">
+                                    <i class="fas fa-angle-left"></i>
+                                </span>
+                                Back to Profile
+                            </a>
+                        {% else %}
+                            <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                Home
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
