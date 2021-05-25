@@ -13,7 +13,7 @@
                 <p class="bag-toast-paragraph">{{ message }}</p>
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
             <hr>
             <p class="bag-toast-paragraph">Your Bag ({{ product_count }}):</p>
             <div class="bag-notification-wrapper">

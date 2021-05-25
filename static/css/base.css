@@ -698,7 +698,6 @@ label {
 }
 
 .form-control {
-    border: 1px solid #000;
     font-size: 1.4rem;
 }
 
@@ -853,4 +852,48 @@ select option[value=""] {
     margin: 2rem;
     text-align: center;
     padding-bottom: 1rem;
+}
+
+/*--------------------------------------------Profile Page*/
+
+.profile-container {
+    margin-bottom: 5rem;
+}
+
+.update-info-button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.profile-heading {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.profile-body {
+    margin-top: 5rem;
+    padding-top: 2rem;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+}
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
 }
