@@ -2,140 +2,151 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid pl-0 pr-0">
-<!--======================================== SEARCH BAR - FROM BOUTIQUE ADO ========================================-->
-        <div class="search-container row">
-            <div class="col-12">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
+<div class="container-fluid pl-0 pr-0">
+    <!--======================================== SEARCH BAR - FROM BOUTIQUE ADO ========================================-->
+    <div class="search-container row">
+        <div class="col-12">
+            <form method="GET" action="{% url 'products' %}">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Search our site">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-<!--======================================== SORT BY/FILTERING - FROM BOUTIQUE ADO ========================================-->
-        <div class="sort-by-container">
-            <div class="row">
-                <div class="col-12 sort-by-body">
-                    <h2 class="sort-by-heading">Sort By :</h2>
-                    <select id="sort-selector" class="custom-select custom-select-sm-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                    </select>   
-                </div>
-                <div class="col-12 category-selected-container">
-                    {% for c in current_categories %}
-                        <p class="category-selected-text">Selected:</p>
-                        <a class="category-badge" href="{% url 'products' %}?category={{ c.name }}">
-                            <span class="category-selected-box">{{ c.friendly_name }}</span>
-                        </a>
-                    {% endfor %}
-                </div>
-                <div class="col-12 results-container">
-                    <p class="results-text">
-                        {% if search_term or current_categories or current_sorting != 'None_None' %}
-                            <a href="{% url 'products' %}">Products Home</a> | </span>
-                        {% endif %}
-                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                    </p>
-                </div>
+    </div>
+    <!--======================================== SORT BY/FILTERING - FROM BOUTIQUE ADO ========================================-->
+    <div class="sort-by-container">
+        <div class="row">
+            <div class="col-12 sort-by-body">
+                <h2 class="sort-by-heading">Sort By :</h2>
+                <select id="sort-selector"
+                    class="custom-select custom-select-sm-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
+                        high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high
+                        to low)</option>
+                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low
+                        to high)</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating
+                        (high to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)
+                    </option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
+                    </option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
+                        (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                        Category (Z-A)</option>
+                </select>
             </div>
-        </div>
-<!--======================================== PRODUCTS - FROM BOUTIQUE ADO ========================================-->
-        <div class="product-container">
-            <div class="product-section row">
-                {% for product in products %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="product-picture">
-                            {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                            {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                            {% endif %}
-                        </div>
-                        <div class="product-body">
-                            <h4 class="product-heading">{{ product.name }}</h4>
-                            <h4 class="product-heading">£ {{ product.price }}</h4>
-                            {% if product.category %}
-                                <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
-                                    <h4 class="product-heading"><i class="fas fa-tag category-icon"></i>{{ product.category.friendly_name }}</h4>
-                                </a>
-                            {% endif %}
-                        </div>
-                    </div>
-<!--======================================== HR FOR LOOP - FROM BOUTIQUE ADO ========================================-->
-                    {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
+            <div class="col-12 category-selected-container">
+                {% for c in current_categories %}
+                <p class="category-selected-text">Selected:</p>
+                <a class="category-badge" href="{% url 'products' %}?category={{ c.name }}">
+                    <span class="category-selected-box">{{ c.friendly_name }}</span>
+                </a>
                 {% endfor %}
+            </div>
+            <div class="col-12 results-container">
+                <p class="results-text">
+                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <a href="{% url 'products' %}">Products Home</a> | </span>
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for
+                    <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
             </div>
         </div>
     </div>
+    <!--======================================== PRODUCTS - FROM BOUTIQUE ADO ========================================-->
+    <div class="product-container">
+        <div class="product-section row">
+            {% for product in products %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="product-picture">
+                    {% if product.image %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="product-body">
+                    <h4 class="product-heading">{{ product.name }}</h4>
+                    <h4 class="product-heading">£ {{ product.price }}</h4>
+                    {% if product.category %}
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
+                        <h4 class="product-heading"><i
+                                class="fas fa-tag category-icon"></i>{{ product.category.friendly_name }}</h4>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            <!--======================================== HR FOR LOOP - FROM BOUTIQUE ADO ========================================-->
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
 <!--======================================== JQUERY FOR SORT SELECTOR - FROM BOUTIQUE ADO ========================================-->
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
-    
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}
