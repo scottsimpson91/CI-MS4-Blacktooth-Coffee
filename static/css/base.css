@@ -753,6 +753,10 @@ select option[value=""] {
     color: #aab7c4 !important;
 }
 
+.form-control-file {
+    font-size: 1.4rem;
+}
+
 /*--------------------------------------------Checkout Success Page*/
 .checkout-success-container {
     min-height: 70vh;
@@ -820,7 +824,8 @@ select option[value=""] {
     text-align: center;
 }
 
-.all-auth-button, .primaryAction {
+.all-auth-button,
+.primaryAction {
     font-size: 1.6rem;
     padding: 0.5rem;
     background-color: #FFD966;
@@ -847,7 +852,9 @@ select option[value=""] {
     margin-bottom: 5rem;
 }
 
-.verified, .unverified, .primary {
+.verified,
+.unverified,
+.primary {
     font-size: 1.2rem;
     padding-left: 2rem;
 }
@@ -913,10 +920,44 @@ select option[value=""] {
 }
 
 .order-history {
-    max-height: 416px; /* Height of profile form + submit button */
+    max-height: 416px;
+    /* Height of profile form + submit button */
     overflow-y: auto;
 }
 
-.profile-table td, .profile-table td span, .profile-table td a, .profile-table td ul, .profile-table td ul li {
+.profile-table td,
+.profile-table td span,
+.profile-table td a,
+.profile-table td ul,
+.profile-table td ul li {
     font-size: 1.2rem;
+}
+
+/*--------------------------------------------Add Product Page*/
+
+.add-product-container {
+    min-height: 70vh;
+    margin-bottom: 5rem;
+}
+
+.add-product-body {
+    margin-top: 4rem;
+}
+
+.cancel-button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #EEE;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.add-product-button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
 }
