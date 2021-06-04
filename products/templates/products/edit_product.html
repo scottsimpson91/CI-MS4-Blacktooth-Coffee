@@ -12,13 +12,13 @@
     <div class="product-action-body">
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
-                <h2 class="heading">Add Product</h2>
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                <h2 class="heading">Edit Product</h2>
+                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <div class="text-right">
                         <a class="btn btn-lg cancel-button" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-lg product-action-button" type="submit">Add Product</button>
+                        <button class="btn btn-lg product-action-button" type="submit">Update Product</button>
                     </div>
                 </form>
             </div>
