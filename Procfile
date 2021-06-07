@@ -1,1 +1,1 @@
-web: gunicorn blacktooth-coffee.wsgi:application
+web: gunicorn blacktooth_coffee.wsgi:application
