@@ -90,6 +90,12 @@
                                 class="fas fa-tag category-icon"></i>{{ product.category.friendly_name }}</h4>
                     </a>
                     {% endif %}
+                    {% if request.user.is_superuser %}
+                        <p class="products-paragraph">
+                            <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
+                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link">Delete</a>
+                        </p>
+                    {% endif %}
                 </div>
             </div>
             <!--======================================== HR FOR LOOP - FROM BOUTIQUE ADO ========================================-->

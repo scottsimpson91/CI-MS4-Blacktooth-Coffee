@@ -243,6 +243,21 @@ footer {
     font-size: 1.4rem;
 }
 
+.products-paragraph, .products-paragraph a {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.products-delete-link {
+    color: #D9534F;
+    padding-left: 0.5rem;
+}
+
+.products-edit-link {
+    padding-right: 0.5rem;
+}
+
 /*--------------------------------------------Product Detail Page*/
 .product-image-section {
     padding-top: 4rem;
