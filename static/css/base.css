@@ -978,11 +978,36 @@ select option[value=""] {
     margin-top: 2rem;
 }
 
-#image-clear_id {
-    margin-left: 1rem;
-    margin-bottom: 2rem;
+.widget-paragraph {
+    font-size: 1.4rem;
 }
 
-#div_id_image > div {
+.custom-control-label {
+    margin: 1rem 0;
+    color: #D9534F;
+}
+
+.widget-file-paragraph {
     font-size: 1.4rem;
+    color: #D9534F;
+    margin-top: 2rem;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    background-color: #EEE;
+    border: 2px solid #000;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
