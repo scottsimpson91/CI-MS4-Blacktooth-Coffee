@@ -110,9 +110,9 @@ a:active:focus {
 }
 
 .homepage-paragraph {
-    padding: 2rem;
-    font-size: 1.4rem;
-    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin-top: 2rem;
 }
 
 .home-container {
@@ -569,7 +569,7 @@ footer {
     margin-top: 5rem;
 }
 
-/*--------------------------------------------Checkout Page*/
+/*--------------------------------------------About Page*/
 #about-hero-image {
     opacity: 0.8;
     width: 100%;
@@ -579,7 +579,12 @@ footer {
 
 .about-paragraph {
     font-size: 1.4rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
+}
+
+.about-paragraph a {
+    font-size: 1.4rem;
+    padding: 1rem 0;
 }
 
 .about-main-content {
