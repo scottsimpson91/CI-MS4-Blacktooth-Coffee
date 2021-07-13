@@ -20,6 +20,7 @@
             <div class="checkout-success-wrapper">
                 <div class="row">
                     <div class="col-12">
+<!--======================================== ORDER INFO ========================================-->
                         <p class="checkout-success-heading">Order Info:</p>
                         <p class="checkout-summary-sub-heading"><strong>Order Number</strong> - {{ order.order_number }}</p>
                         <p class="checkout-summary-sub-heading"><strong>Order Date</strong> - {{ order.date }}</p>
@@ -28,6 +29,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-12">
+<!--======================================== ORDER DETAILS ========================================-->
                         <p class="checkout-success-heading">Order Details:</p>
                         {% for item in order.lineitems.all %}
                             <p class="checkout-summary-sub-heading-order-details"><strong>Item</strong> - {{ item.product.name }}</p>
@@ -39,6 +41,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-12">
+<!--======================================== DELIVERY DETAILS ========================================-->
                         <p class="checkout-success-heading">Delivering To:</p>
                         <p class="checkout-summary-sub-heading"><strong>Full Name</strong> - {{ order.full_name }}</p>
                         <p class="checkout-summary-sub-heading"><strong>Address</strong> - {{ order.street_address1 }}</p>
@@ -59,6 +62,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-12">
+<!--======================================== BILLING DETAILS ========================================-->
                         <p class="checkout-success-heading">Billing Info:</p>
                         <p class="checkout-summary-sub-heading"><strong>Order Total</strong> - £{{ order.order_total }}</p>
                         <p class="checkout-summary-sub-heading"><strong>Delivery Cost</strong> - £{{ order.delivery_cost }}</p>
@@ -68,6 +72,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-12">
+<!--======================================== BUTTONS ========================================-->
                         {% if from_profile %}
                             <a href="{% url 'profile' %}" class="btn btn-lg back-to-profile-button">
                                 <span class="icon">

@@ -28,6 +28,7 @@
                             <p class="bag-paragraph">£{{ item.product.price }}</p>
                             <p class="bag-paragraph"><small>SKU: {{ item.product.sku|upper }}</small></p>
                         </div>
+<!--======================================== BAG FORM ========================================-->
                         <div class="col-sm-6 col-md-3">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
@@ -79,6 +80,8 @@
                         {% endif %}
                     </div>
                 </div>
+<!--======================================== BAG BUTTONS ========================================-->
+
                 <div class="row">
                     <div class="col">
                         <a href="{% url 'products' %}" class="btn btn-lg keep-shopping-button">
@@ -103,7 +106,7 @@
     </div>
 </div>
 {% endblock %}
-
+<!--======================================== JS ========================================-->
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
