@@ -50,8 +50,8 @@
                     <ul class="navbar-nav ml-auto flex-nowrap">
                         <li class="list-inline-item nav-item dropdown">
                             <a href="#" class="nav-link" id="coffee-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
-                                    <h4>Our Coffee<i class="menu-icon fas fa-caret-down"></i></h4>
+                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <h4>Our Coffee<i class="menu-icon fas fa-caret-down"></i></h4>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="coffee-options">
                                 <a href="{% url 'products' %}" class="dropdown-item">All Coffee</a>
@@ -71,11 +71,10 @@
                                 <h4>Contact Us</h4>
                             </a>
                         </li>
-
                         <li class="list-inline-item nav-item dropdown">
                             <a href="#" class="nav-link" id="account-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user"></i></div>
-                                    <h4>My Account<i class="menu-icon fas fa-caret-down"></i></h4>
+                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user"></i></div>
+                                <h4>My Account<i class="menu-icon fas fa-caret-down"></i></h4>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="account-options">
                                 {% if request.user.is_authenticated %}
@@ -106,7 +105,7 @@
                 </div>
             </nav>
         </header>
-    
+<!--======================================== MESSAGES / TOASTS ========================================-->
         {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
@@ -130,7 +129,6 @@
     
         {% block content %}
         {% endblock %}
-
 <!--======================================== FOOTER - FROM MS3 ========================================-->    
         <footer>
             <div class="row">
@@ -161,7 +159,7 @@
                 </div>                            
             </div>
         </footer>        
-    
+<!--======================================== JS ========================================-->
         {% block postloadjs %}
         <script>
             $('.toast').toast('show');

@@ -2,35 +2,35 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid pl-0 pr-0">
-        <div class="home-container">
+<div class="container-fluid pl-0 pr-0">
+    <div class="home-container">
 <!--======================================== BANNER ========================================-->  
-            <a href="{% url 'products' %}">
-                <div class="shop-now-banner col-12">
-                    <h2>Quality Coffee direct to your door! Check out our range here!</h2>
-                </div>
-            </a>
-    <!--======================================== HERO IMAGE ========================================-->
-            <img src="{{ MEDIA_URL }}homepage_background_cropped.jpg" class="img-fluid" id="hero-image" alt="coffee">
-    <!--======================================== HOME PAGE CONTENT ========================================-->
-            <div class="row">
-                <div class="col-xl-8">
-                    <h3 class="heading">Crafted by Connoisseurs</h3>
-                    <hr class="heading-hr">
-                    <p class="homepage-paragraph">
-                        Welcome to Blacktooth Coffee! There is nothing we love more than discovering new coffee. Here we have gathered a collection of some of the best tasting coffee on Earth!
-                    </p>
-                    <p class="homepage-paragraph">
-                        You can get our fantastic responsibly sourced coffee delivered direct to your door! Simply select the type of coffee you want to try, place and order and it will be with you in a couple of days!
-                    </p>
-                    <p class="homepage-paragraph">
-                        From farm to cup - come on an exciting journey with us as you get to taste and learn about coffee from different parts of the world!
-                    </p>
-                </div>
-                <div class="col-xl-4">
-                    <img src="{{ MEDIA_URL }}homepage_coffee_beans.png" class="img-fluid" id="homepage-coffee-beans" alt="coffee beans">
-                </div>
+        <a href="{% url 'products' %}">
+            <div class="shop-now-banner col-12">
+                <h2>Quality Coffee direct to your door! Check out our range here!</h2>
+            </div>
+        </a>
+<!--======================================== HERO IMAGE ========================================-->
+        <img src="{{ MEDIA_URL }}homepage_background_cropped.jpg" class="img-fluid" id="hero-image" alt="coffee">
+<!--======================================== HOME PAGE CONTENT ========================================-->
+        <div class="row">
+            <div class="col-xl-8">
+                <h3 class="heading">Crafted by Connoisseurs</h3>
+                <hr class="heading-hr">
+                <p class="homepage-paragraph">
+                    Welcome to Blacktooth Coffee! There is nothing we love more than discovering new coffee. Here we have gathered a collection of some of the best tasting coffee on Earth!
+                </p>
+                <p class="homepage-paragraph">
+                    You can get our fantastic responsibly sourced coffee delivered direct to your door! Simply select the type of coffee you want to try, place and order and it will be with you in a couple of days!
+                </p>
+                <p class="homepage-paragraph">
+                    From farm to cup - come on an exciting journey with us as you get to taste and learn about coffee from different parts of the world!
+                </p>
+            </div>
+            <div class="col-xl-4">
+                <img src="{{ MEDIA_URL }}homepage_coffee_beans.png" class="img-fluid" id="homepage-coffee-beans" alt="coffee beans">
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

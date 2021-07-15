@@ -2,119 +2,103 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid pl-0 pr-0">
+<div class="container-fluid pl-0 pr-0">
 <!--======================================== SEARCH BAR - FROM BOUTIQUE ADO ========================================-->
-        <div class="search-container row">
-            <div class="col-12">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
+    <div class="search-container row">
+        <div class="col-12">
+            <form method="GET" action="{% url 'products' %}">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Search our site">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
+    </div>
 <!--======================================== PRODUCT DETAILS ========================================-->
-        <div class="product-details-container">
-            <div class="product-image-section row">
-                <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-1">
-                    <div class="product-details-image">
-                        {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                        {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="product-body-section row">
-                    <div class="col">
-                        <h4 class="product-details-main-heading">{{ product.name }}</h4>
-                        {% if request.user.is_superuser %}
-                            <p class="products-paragraph">
-                                <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
-                                <a href="{% url 'delete_product' product.id %}" class="products-delete-link">Delete</a>
-                            </p>
-                        {% endif %}
-                        {% if product.category %}
-                            <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
-                                <h4 class="product-details-heading"><i class="fas fa-tag category-icon-product-details"></i>{{ product.category.friendly_name }}</h4>
-                            </a>
-                        {% endif %}
-                        <h4 class="product-details-heading">£{{ product.price }} per {{ product.weight }}g bag</h4>
-                        <h4 class="product-details-heading">Origin - {{ product.origin.name }}</h4>
-                        <h4 class="product-details-heading">Region - {{ product.region }}</h4>
-                        <h4 class="product-details-heading">Variety - {{ product.variety }}</h4>
-                        <h4 class="product-details-heading">Process - {{ product.process }}</h4>
-                        <h4 class="product-details-heading">Flavour Notes - {{ product.notes }}</h4>
-                    </div>
-                    
+    <div class="product-details-container">
+        <div class="product-image-section row">
+            <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-1">
+                <div class="product-details-image">
+                    {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
                 </div>
             </div>
-        </div>
-<!--======================================== PRODUCT ORDER FORM ========================================-->
-        <div class="product-order-container">
-            <hr>
-            <div class="row">
-                <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4 order-form-container">
-                    <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST" id="order-form">
-                        {% csrf_token %}
-                        <h4 class="product-order-main-heading">Create Your Order:</h4>
-                        <div class="form-row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <h4 class="product-order-heading">Quantity:</h4>
-                                    <p class="product-order-small-heading">All our bags are 250g (AVG = 15 cups)</p>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn plus-minus-button" 
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn plus-minus-button"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group-button">
-                                    <input type="submit" class="btn btn-lg add-to-bag-button" value="Add to Bag">
-                                </div>
-                                <div class="center">
-                                    <a href="{% url 'products' %}" class="btn btn-lg keep-shopping-button">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        Keep Shopping
-                                    </a>
-                                </div>
-                            </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        </div>
-                    </form>
+            <div class="product-body-section row">
+                <div class="col">
+                    <h4 class="product-details-main-heading">{{ product.name }}</h4>
+                    {% if request.user.is_superuser %}
+                        <p class="products-paragraph">
+                            <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
+                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link">Delete</a>
+                        </p>
+                    {% endif %}
+                    {% if product.category %}
+                        <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
+                            <h4 class="product-details-heading"><i class="fas fa-tag category-icon-product-details"></i>{{ product.category.friendly_name }}</h4>
+                        </a>
+                    {% endif %}
+                    <h4 class="product-details-heading">£{{ product.price }} per {{ product.weight }}g bag</h4>
+                    <h4 class="product-details-heading">Origin - {{ product.origin.name }}</h4>
+                    <h4 class="product-details-heading">Region - {{ product.region }}</h4>
+                    <h4 class="product-details-heading">Variety - {{ product.variety }}</h4>
+                    <h4 class="product-details-heading">Process - {{ product.process }}</h4>
+                    <h4 class="product-details-heading">Flavour Notes - {{ product.notes }}</h4>
                 </div>
             </div>
         </div>
     </div>
+<!--======================================== PRODUCT ORDER FORM ========================================-->
+    <div class="product-order-container">
+        <hr>
+        <div class="row">
+            <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4 order-form-container">
+                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST" id="order-form">
+                    {% csrf_token %}
+                    <h4 class="product-order-main-heading">Create Your Order:</h4>
+                    <div class="form-row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <h4 class="product-order-heading">Quantity:</h4>
+                                <p class="product-order-small-heading">All our bags are 250g (AVG = 15 cups)</p>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn plus-minus-button" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}"><span class="icon"><i class="fas fa-minus"></i></span></button>
+                                    </div>
+                                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn plus-minus-button" data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}"><span class="icon"><i class="fas fa-plus"></i></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group-button">
+                                <input type="submit" class="btn btn-lg add-to-bag-button" value="Add to Bag">
+                            </div>
+                            <div class="center">
+                                <a href="{% url 'products' %}" class="btn btn-lg keep-shopping-button"><span class="icon"><i class="fas fa-chevron-left"></i></span>Keep Shopping</a>
+                            </div>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-
+<!--======================================== JS ========================================-->
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}

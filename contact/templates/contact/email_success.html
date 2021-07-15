@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
- <div class="email-success-container">
+<div class="email-success-container">
     <div class="row">
         <div class="col">
             <h2 class="heading">Contact</h2>
@@ -21,14 +21,9 @@
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2 email-success-body">
             <div class="text-center">
-                <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    Home
-                </a>
+                <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button"><span class="icon"><i class="fas fa-chevron-left"></i></span>Home</a>
             </div>
         </div>
     </div>
- </div>
+</div>
 {% endblock %}

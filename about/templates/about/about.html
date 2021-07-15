@@ -3,38 +3,36 @@
 
 {% block content %}
 <!--======================================== ABOUT PAGE ========================================-->
-
-    <div class="about-container">
+<div class="about-container">
 <!--======================================== ABOUT HERO IMG ========================================-->
-
-        <img src="{{ MEDIA_URL }}about-hero-image.jpg" class="img-fluid" id="about-hero-image" alt="coffee cup">
-        <div class="row">
-            <div class="col">
-                <h2 class="heading">About</h2>
-                <hr class="heading-hr">
-            </div>
+    <img src="{{ MEDIA_URL }}about-hero-image.jpg" class="img-fluid" id="about-hero-image" alt="coffee cup">
+    <div class="row">
+        <div class="col">
+            <h2 class="heading">About</h2>
+            <hr class="heading-hr">
         </div>
+    </div>
 <!--======================================== ABOUT CONTENT ========================================-->
-        <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mb-2">
-                <div class="about-main-content">
-                    <p class="about-paragraph">
-                        Blacktooth Coffee is a British based speciality coffee company. With over 20 years experience working in the industry, we really are experts within our field.
-                    </p>
-                    <p class="about-paragraph">
-                        Our purpose is to lead lasting change in the way our coffee is valued, grown, produced and enjoyed. We cultivate long-term relationships with coffee communities at origin, keeping in regular contact to ensure our producers are supported.
-                    </p>
-                    <p class="about-paragraph">
-                        We discovered that from farm to cup, there were too many middle parties in the supply chain which often left the hardworking farmers underpaid. We decided to take matters into our own hands and built direct relationships with farmers worldwide, paying them a premium price for premium coffee.
-                    </p>
-                    <p class="about-paragraph">
-                        As a business, we have committed to paying above the Fairtrade base price that was offered to farmers. This ensures they are more than fairly compensated for their hard work.
-                    </p>
-                    <p class="about-paragraph">
-                        Like how this all sounds? <a href="{% url 'products' %}">Click HERE to try browse our range of fantastic coffee!</a>
-                    </p>
-                </div>
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 mb-2">
+            <div class="about-main-content">
+                <p class="about-paragraph">
+                    Blacktooth Coffee is a British based speciality coffee company. With over 20 years experience working in the industry, we really are experts within our field.
+                </p>
+                <p class="about-paragraph">
+                    Our purpose is to lead lasting change in the way our coffee is valued, grown, produced and enjoyed. We cultivate long-term relationships with coffee communities at origin, keeping in regular contact to ensure our producers are supported.
+                </p>
+                <p class="about-paragraph">
+                    We discovered that from farm to cup, there were too many middle parties in the supply chain which often left the hardworking farmers underpaid. We decided to take matters into our own hands and built direct relationships with farmers worldwide, paying them a premium price for premium coffee.
+                </p>
+                <p class="about-paragraph">
+                    As a business, we have committed to paying above the Fairtrade base price that was offered to farmers. This ensures they are more than fairly compensated for their hard work.
+                </p>
+                <p class="about-paragraph">
+                    Like how this all sounds? <a href="{% url 'products' %}">Click HERE to try browse our range of fantastic coffee!</a>
+                </p>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

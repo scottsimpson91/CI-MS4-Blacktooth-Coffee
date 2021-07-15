@@ -2,95 +2,84 @@
 {% load static %}
 
 {% block content %}
-    <div class="checkout-success-container">
-        <div class="row">
-            <div class="col">
-                <h2 class="heading">Thank You!</h2>
-                <hr class="heading-hr">
-            </div>
+<div class="checkout-success-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="heading">Thank You!</h2>
+            <hr class="heading-hr">
         </div>
+    </div>
 <!--======================================== ORDER EMAIL CONFIRMATION ========================================-->
-        <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mb-2">
-                <p class="checkout-success-paragraph">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-            </div>
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2 mb-2">
+            <p class="checkout-success-paragraph">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
         </div>
-<!--======================================== ORDER SUMMARY ========================================-->
-        <div class="col-12 col-md-8 offset-md-2">
-            <div class="checkout-success-wrapper">
-                <div class="row">
-                    <div class="col-12">
+    </div>
+    <div class="col-12 col-md-8 offset-md-2">
+        <div class="checkout-success-wrapper">
+            <div class="row">
+                <div class="col-12">
 <!--======================================== ORDER INFO ========================================-->
-                        <p class="checkout-success-heading">Order Info:</p>
-                        <p class="checkout-summary-sub-heading"><strong>Order Number</strong> - {{ order.order_number }}</p>
-                        <p class="checkout-summary-sub-heading"><strong>Order Date</strong> - {{ order.date }}</p>
-                    </div>
+                    <p class="checkout-success-heading">Order Info:</p>
+                    <p class="checkout-summary-sub-heading"><strong>Order Number</strong> - {{ order.order_number }}</p>
+                    <p class="checkout-summary-sub-heading"><strong>Order Date</strong> - {{ order.date }}</p>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-12">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
 <!--======================================== ORDER DETAILS ========================================-->
-                        <p class="checkout-success-heading">Order Details:</p>
-                        {% for item in order.lineitems.all %}
-                            <p class="checkout-summary-sub-heading-order-details"><strong>Item</strong> - {{ item.product.name }}</p>
-                            <p class="checkout-summary-sub-heading-order-details"><strong>Quantity</strong> - {{ item.quantity }} @ £{{ item.product.price }} each</p>
-                            <hr class="checkout-summary-hr">
-                        {% endfor %}
-                    </div>
+                    <p class="checkout-success-heading">Order Details:</p>
+                    {% for item in order.lineitems.all %}
+                        <p class="checkout-summary-sub-heading-order-details"><strong>Item</strong> - {{ item.product.name }}</p>
+                        <p class="checkout-summary-sub-heading-order-details"><strong>Quantity</strong> - {{ item.quantity }} @ £{{ item.product.price }} each</p>
+                        <hr class="checkout-summary-hr">
+                    {% endfor %}
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-12">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
 <!--======================================== DELIVERY DETAILS ========================================-->
-                        <p class="checkout-success-heading">Delivering To:</p>
-                        <p class="checkout-summary-sub-heading"><strong>Full Name</strong> - {{ order.full_name }}</p>
-                        <p class="checkout-summary-sub-heading"><strong>Address</strong> - {{ order.street_address1 }}</p>
-                        {% if order.street_address2 %}
-                            <p class="checkout-summary-sub-heading"><strong>Address</strong> - {{ order.street_address2 }}</p>
-                        {% endif %}
-                        {% if order.county %}
-                            <p class="checkout-summary-sub-heading"><strong>County</strong> - {{ order.county }}</p>
-                        {% endif %}
-                        <p class="checkout-summary-sub-heading"><strong>Town or City</strong> - {{ order.town_or_city }}</p>
-                        {% if order.postcode %}
-                            <p class="checkout-summary-sub-heading"><strong>Postcode</strong> - {{ order.postcode }}</p>
-                        {% endif %}
-                        <p class="checkout-summary-sub-heading"><strong>Country</strong> - {{ order.country }}</p>
-                        <p class="checkout-summary-sub-heading"><strong>Phone Number</strong> - {{ order.phone_number }}</p>
-                    </div>
+                    <p class="checkout-success-heading">Delivering To:</p>
+                    <p class="checkout-summary-sub-heading"><strong>Full Name</strong> - {{ order.full_name }}</p>
+                    <p class="checkout-summary-sub-heading"><strong>Address</strong> - {{ order.street_address1 }}</p>
+                    {% if order.street_address2 %}
+                        <p class="checkout-summary-sub-heading"><strong>Address</strong> - {{ order.street_address2 }}</p>
+                    {% endif %}
+                    {% if order.county %}
+                        <p class="checkout-summary-sub-heading"><strong>County</strong> - {{ order.county }}</p>
+                    {% endif %}
+                    <p class="checkout-summary-sub-heading"><strong>Town or City</strong> - {{ order.town_or_city }}</p>
+                    {% if order.postcode %}
+                        <p class="checkout-summary-sub-heading"><strong>Postcode</strong> - {{ order.postcode }}</p>
+                    {% endif %}
+                    <p class="checkout-summary-sub-heading"><strong>Country</strong> - {{ order.country }}</p>
+                    <p class="checkout-summary-sub-heading"><strong>Phone Number</strong> - {{ order.phone_number }}</p>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-12">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
 <!--======================================== BILLING DETAILS ========================================-->
-                        <p class="checkout-success-heading">Billing Info:</p>
-                        <p class="checkout-summary-sub-heading"><strong>Order Total</strong> - £{{ order.order_total }}</p>
-                        <p class="checkout-summary-sub-heading"><strong>Delivery Cost</strong> - £{{ order.delivery_cost }}</p>
-                        <hr>
-                        <p class="checkout-summary-sub-heading"><strong>Grand Total</strong> - £{{ order.grand_total }}</p>
-                    </div>
+                    <p class="checkout-success-heading">Billing Info:</p>
+                    <p class="checkout-summary-sub-heading"><strong>Order Total</strong> - £{{ order.order_total }}</p>
+                    <p class="checkout-summary-sub-heading"><strong>Delivery Cost</strong> - £{{ order.delivery_cost }}</p>
+                    <hr>
+                    <p class="checkout-summary-sub-heading"><strong>Grand Total</strong> - £{{ order.grand_total }}</p>
                 </div>
-                <div class="row text-center">
-                    <div class="col-12">
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
 <!--======================================== BUTTONS ========================================-->
-                        {% if from_profile %}
-                            <a href="{% url 'profile' %}" class="btn btn-lg back-to-profile-button">
-                                <span class="icon">
-                                    <i class="fas fa-angle-left"></i>
-                                </span>
-                                Back to Profile
-                            </a>
-                        {% else %}
-                            <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                Home
-                            </a>
-                        {% endif %}
-                    </div>
+                    {% if from_profile %}
+                        <a href="{% url 'profile' %}" class="btn btn-lg back-to-profile-button"><span class="icon"><i class="fas fa-angle-left"></i></span>Back to Profile</a>
+                    {% else %}
+                        <a href="{% url 'home' %}" class="btn btn-lg back-to-home-button"><span class="icon"><i class="fas fa-chevron-left"></i></span>Home</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
