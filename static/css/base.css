@@ -631,6 +631,7 @@ footer {
 /*--------------------------------------------Contact Page*/
 .contact-container {
     margin-bottom: 5rem;
+    min-height: 70vh;
 }
 
 .contact-heading {
@@ -640,6 +641,12 @@ footer {
 }
 
 .contact-paragraph {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contact-paragraph strong {
     font-size: 1.4rem;
     margin-top: 2rem;
     text-align: center;
