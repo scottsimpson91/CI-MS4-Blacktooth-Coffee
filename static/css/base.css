@@ -652,7 +652,7 @@ footer {
     text-align: center;
 }
 
-.contact-paragraph a {
+.contact-paragraph strong a {
     font-size: 1.4rem;
     margin-top: 2rem;
     text-align: center;
