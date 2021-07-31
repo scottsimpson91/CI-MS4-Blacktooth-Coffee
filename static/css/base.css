@@ -652,6 +652,12 @@ footer {
     text-align: center;
 }
 
+.contact-paragraph a {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
 .contact-form-button {
     background-color: #FFD966;
     border: 2px solid #000;
