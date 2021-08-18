@@ -50,6 +50,13 @@ a:active:focus {
     align-items: center;
 }
 
+.icon {
+    padding: 0.25rem;
+}
+
+.icon i {
+    padding: 0.25rem;
+}
 /*--------------------------------------------Navbar*/
 .navbar {
     background-color: #3a413a;
@@ -184,7 +191,7 @@ footer {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin: 7rem 0;
+    margin: 2rem 0;
 }
 
 .footer-content a {
@@ -202,6 +209,14 @@ footer {
     font-size: 1.6rem;
     text-decoration: underline;
     margin: 0;
+}
+
+.footer-disclaimer {
+    font-size: 1rem;
+    padding: 1rem;
+    color: #FFF;
+    display: block;
+    text-align: center;
 }
 
 /*--------------------------------------------Product Page*/
@@ -409,6 +424,14 @@ footer {
 
 .keep-shopping-button {
     background-color: #EEE;
+    border: 2px solid #000;
+    font-size: 1.6rem;
+    margin: 2rem;
+    font-weight: bold;
+}
+
+.keep-shopping-button-empty-bag {
+    background-color: #FFD966;
     border: 2px solid #000;
     font-size: 1.6rem;
     margin: 2rem;
