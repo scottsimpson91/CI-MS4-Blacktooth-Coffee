@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'about',
     'contact',
     'profiles',
+    'blog',
 
     # Other
     'django_countries',
@@ -126,6 +127,7 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+    
 else:
     DATABASES = {
         'default': {
@@ -203,7 +205,7 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe
-FREE_DELIVERY_THRESHOLD = 60
+FREE_DELIVERY_THRESHOLD = 30
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')

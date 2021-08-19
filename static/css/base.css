@@ -134,8 +134,6 @@ a:active:focus {
 
 #hero-image {
     width: 100%;
-    min-height: 35vh;
-    max-height: 70vh;
 }
 
 #homepage-coffee-beans {
@@ -602,8 +600,6 @@ footer {
 #about-hero-image {
     opacity: 0.8;
     width: 100%;
-    min-height: 35vh;
-    max-height: 70vh;
 }
 
 .about-paragraph {
@@ -654,7 +650,7 @@ footer {
 /*--------------------------------------------Contact Page*/
 .contact-container {
     margin-bottom: 5rem;
-    min-height: 70vh;
+    min-height: 75vh;
 }
 
 .contact-heading {
@@ -1063,4 +1059,46 @@ select option[value=""] {
     min-height: 100%;
     opacity: 0;
     cursor: pointer;
+}
+
+/*--------------------------------------------Blog (Brewtorials)*/
+
+.blog-container {
+    min-height: 75vh;
+}
+
+.blog-main-content {
+    margin-top: 5rem;
+}
+
+.blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blog-date {
+    font-size: 1.2rem;
+}
+
+.blog-intro {
+    font-size: 1.6rem;
+}
+
+.blog-body {
+    font-size: 1.4rem;
+}
+
+.blog-add-link {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    padding: 0.5rem;
+}
+
+.blog-add-section {
+    text-align: center;
+    margin-top: 5rem;
 }
