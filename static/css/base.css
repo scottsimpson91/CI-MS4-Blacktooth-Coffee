@@ -1089,6 +1089,17 @@ select option[value=""] {
     font-size: 1.4rem;
 }
 
+.blog-paragraph {
+    font-size: 1.6rem;
+}
+
+.blog-read-more-link {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .blog-add-link {
     font-size: 1.4rem;
     color: #000;
