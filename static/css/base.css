@@ -1065,6 +1065,7 @@ select option[value=""] {
 
 .blog-container {
     min-height: 75vh;
+    margin-bottom: 5rem;
 }
 
 .blog-main-content {

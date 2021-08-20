@@ -39,7 +39,7 @@
     <body>
 <!--======================================== NAVBAR - FROM MS3 ========================================-->
         <header class="container-fluid pl-0 pr-0">
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-xl navbar-dark">
                 <a class="navbar-brand" href="{% url 'home' %}">
                     <h1 class="navbar-title">Blacktooth Coffee</h1>
                 </a>
@@ -50,7 +50,7 @@
                     <ul class="navbar-nav ml-auto flex-nowrap">
                         <li class="list-inline-item nav-item dropdown">
                             <a href="#" class="nav-link" id="coffee-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <div class="text-center d-none d-lg-block"></div>
                                 <h4>Our Coffee<i class="menu-icon fas fa-caret-down"></i></h4>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="coffee-options">
@@ -61,25 +61,25 @@
                         </li>
                         <li class="list-inline-item nav-item">
                             <a href="{% url 'blog' %}" class="nav-link">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <div class="text-center d-none d-lg-block"></div>
                                 <h4>Brewtorials</h4>
                             </a>
                         </li>
                         <li class="list-inline-item nav-item">
                             <a href="{% url 'about' %}" class="nav-link">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <div class="text-center d-none d-lg-block"></div>
                                 <h4>About Us</h4>
                             </a>
                         </li>
                         <li class="list-inline-item nav-item">
                             <a href="{% url 'contact' %}" class="nav-link">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user invisible"></i></div>
+                                <div class="text-center d-none d-lg-block"></div>
                                 <h4>Contact Us</h4>
                             </a>
                         </li>
                         <li class="list-inline-item nav-item dropdown">
                             <a href="#" class="nav-link" id="account-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-user"></i></div>
+                                <div class="text-center d-none d-lg-block"></div>
                                 <h4>My Account<i class="menu-icon fas fa-caret-down"></i></h4>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="account-options">
@@ -97,7 +97,7 @@
                         </li>
                         <li class="list-inline-item nav-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_bag' %}">
-                                <div class="text-center d-none d-lg-block"><i class="nav-icon fas fa-shopping-bag"></i></div>
+                                <div class="text-center d-none d-lg-block"></i></div>
                                 <h4>
                                     {% if grand_total %}
                                         £{{ grand_total|floatformat:2 }}

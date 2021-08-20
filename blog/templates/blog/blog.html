@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2 mb-2 blog-add-section">
             {% if request.user.is_superuser %}
-                <a href="" class="blog-add-link">Create New Post</a>
+                <a href="{% url 'add_post' %}" class="blog-add-link">Create New Post</a>
             {% endif %}
         </div>
     </div>
