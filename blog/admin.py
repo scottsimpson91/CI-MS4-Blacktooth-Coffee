@@ -1,5 +1,16 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 
-admin.site.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'date_added')
+
+
+admin.site.register(Post, PostAdmin)
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'date_added')
+
+
+admin.site.register(Comment, CommentAdmin)
