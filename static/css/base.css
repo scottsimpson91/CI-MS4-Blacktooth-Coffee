@@ -1131,3 +1131,14 @@ select option[value=""] {
 .user-comments {
     margin: 4rem 0;
 }
+
+.edit-post-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.delete-post-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D9534F;
+}
