@@ -37,11 +37,12 @@
                 <hr class="heading-hr">
                 <div class="blog-comments-container">
                     {% for comment in post.comments.all %}
-                        <div class="user-comments"></div>
+                        <div class="user-comments">
                             <p class="blog-paragraph">{{ comment.name }}</p>
                             <p class="blog-date">{{ comment.date_added }}</p>
                             <p class="blog-paragraph">{{ comment.body }}</p>
                             <hr>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
