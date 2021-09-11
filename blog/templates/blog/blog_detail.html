@@ -44,6 +44,7 @@
                                 <hr>
                                 <p class="blog-paragraph">{{ comment.body }}</p>
                                 <hr>
+                                <a href="{% url 'delete_comment' comment.id %}" class="delete-post-button">Delete Post</a>
                             </div>
                         {% endfor %}
                     {% else %}
