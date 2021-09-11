@@ -36,14 +36,19 @@
                 <h2 class="heading">Comments</h2>
                 <hr class="heading-hr">
                 <div class="blog-comments-container">
-                    {% for comment in post.comments.all %}
-                        <div class="user-comments">
-                            <p class="blog-paragraph">{{ comment.name }}</p>
-                            <p class="blog-date">{{ comment.date_added }}</p>
-                            <p class="blog-paragraph">{{ comment.body }}</p>
-                            <hr>
-                        </div>
-                    {% endfor %}
+                    {% if post.comments.all %}
+                        {% for comment in post.comments.all %}
+                            <div class="user-comments">
+                                <p class="blog-paragraph">{{ comment.name }}</p>
+                                <p class="blog-date">{{ comment.date_added }}</p>
+                                <hr>
+                                <p class="blog-paragraph">{{ comment.body }}</p>
+                                <hr>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="blog-no-comment-paragraph">There are currently no comments. Please add one below!</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

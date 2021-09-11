@@ -18,9 +18,9 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, validators=[RegexValidator(regex='^.{3}$', message='Minimum length of 3 characters', code='nomatch')])
+    name = models.CharField(max_length=255)
     email = models.EmailField()
-    body = models.TextField(validators=[RegexValidator(regex='^.{5}$', message='Minimum length of 5 characters', code='nomatch')])
+    body = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
