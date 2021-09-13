@@ -29,50 +29,5 @@
                 </div>
             </div>
     </div>
-<!--======================================== BLOG/BREWTORIALS COMMENTS ========================================-->
-    <div class="row">
-        <div class="col-12 col-md-8 offset-md-2 mb-2">
-            <div class="blog-comments-section">
-                <h2 class="heading">Comments</h2>
-                <hr class="heading-hr">
-                <div class="blog-comments-container">
-                    {% if post.comments.all %}
-                        {% for comment in post.comments.all %}
-                            <div class="user-comments">
-                                <p class="blog-paragraph">{{ comment.name }}</p>
-                                <p class="blog-date">{{ comment.date_added }}</p>
-                                <hr>
-                                <p class="blog-paragraph">{{ comment.body }}</p>
-                                <hr>
-                                <a href="{% url 'delete_comment' comment.id %}" class="delete-post-button">Delete Post</a>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <p class="blog-no-comment-paragraph">There are currently no comments. Please add one below!</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-<!--======================================== BLOG/BREWTORIALS ADD COMMENT SECTION ========================================-->
-    <div class="row">
-        <div class="col-12 col-md-8 offset-md-2 mb-2">
-            <div class="blog-comments-section">
-                <h2 class="heading">Add Comment</h2>
-                <hr class="heading-hr">
-                <div class="blog-comments-container">
-                    <form method="POST" action="{% url 'blog_detail' post.slug %}">
-                        {% csrf_token %}
-                        {{ form | crispy }}
-                        <div>
-                            <div class="text-center">
-                                <button class="add-comment-button">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock %}
