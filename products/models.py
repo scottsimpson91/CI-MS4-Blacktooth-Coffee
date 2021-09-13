@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -35,3 +36,28 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    RATING = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
+
+    user = models.ForeignKey(User, null=True, blank=True,
+                             on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='reviews', null=True,
+                                blank=True, on_delete=models.SET_NULL)
+    review_title = models.CharField(max_length=254)
+    review_body = models.TextField()
+    rating = models.IntegerField(choices=RATING, default=3)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date_added']
+
+    def __str__(self):
+        return self.review_title
