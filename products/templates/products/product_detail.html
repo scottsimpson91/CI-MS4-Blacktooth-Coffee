@@ -103,17 +103,48 @@
             <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
                 <h2 class="heading">Reviews</h2>
                 <hr class="heading-hr">
+                <div class="review-section">
+                    {% for review in product.reviews.all %}
+                        <div class="review-content">
+                            {% if review.user == request.user or request.user.is_superuser %}
+                                <div class="text-right">
+                                    <a class="btn edit-review-button" href="">Edit Review </a>
+                                    {% if request.user.is_superuser %}
+                                        <a class="btn delete-review-button" href=""> Delete Review</a>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            <p class="review-paragraph"><small>by {{ review.user }} on {{ review.date_added|date:"d-m-Y" }}</small></p>
+                            <p class="review-paragraph">{{ review.rating }} Stars |  <strong>{{ review.review_title }}</strong></p>
+                            <p class="review-paragraph">{{ review.review_body }}</p>
+                        </div>
+                    {% empty %}
+                        <div class="review-no-content">
+                            <p class="review-paragraph">There are currently no reviews for this product. Please add one below!</p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
+        <hr>
+<!--======================================== PRODUCT REVIEWS FORM ========================================-->
         <div class="row">
             <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
-                <form method="POST" action="{% url 'add_review' product.id %}">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="text-center">
-                        <button class="btn btn-lg add-review-button" type="submit">Submit Review</button>
+                <h2 class="heading">Submit a Review</h2>
+                <hr class="heading-hr">
+                {% if request.user.is_authenticated %}
+                    <form method="POST" action="{% url 'add_review' product.id %}">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="text-center">
+                            <button class="btn btn-lg add-review-button" type="submit">Submit Review</button>
+                        </div>
+                    </form>
+                {% else %}
+                    <div class="review-no-content">
+                        <p class="review-paragraph">You must have an account or be logged in to leave a review.</p>
                     </div>
-                </form>
+                {% endif %}
             </div>
         </div>
     </div>

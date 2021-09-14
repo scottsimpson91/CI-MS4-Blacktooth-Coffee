@@ -1143,3 +1143,40 @@ select option[value=""] {
     border: 2px solid #000;
     padding: 0.5rem;
 }
+
+.review-container {
+    min-height: 75vh;
+    margin-bottom: 5rem;
+}
+
+.review-content {
+    margin: 5rem 0;
+    border: 1px solid #EEE;
+    padding: 0 1rem;
+    background-color: #EEE;
+}
+
+.review-no-content {
+    margin: 5rem 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.review-paragraph, .review-paragraph strong {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+}
+
+.edit-review-button {
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    color: #007BFF;
+}
+
+.delete-review-button {
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    color: #D9534F;
+}

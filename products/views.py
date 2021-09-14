@@ -145,7 +145,7 @@ def delete_product(request, product_id):
 
 @login_required
 def add_review(request, product_id):
-    """ Add a rewiew for a product """
+    """ Add a review for a product """
 
     product = get_object_or_404(Product, pk=product_id)
 
