@@ -1,6 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 
 class Category(models.Model):
@@ -64,15 +65,18 @@ class Review(models.Model):
 
     def calculate_ratings(self):
         # Identify product being rated
-
+        product = get_object_or_404(Product, id=self.product.id)
         # Find all reviews for product
-
+        reviews = Review.objects.all().filter(product=self.product)
         # Iterate through all reviews
-
+        count = len(reviews)
         # Calculate avg of all ratings for reviews
-
+        sum = 0
+        for rvw in reviews:
+            sum += rvw.rating
         # Set avg rating to product
-        pass
+        product.rating = sum/count
+        product.save()
 
     def save(self, *args, **kwargs):
         super().save()
