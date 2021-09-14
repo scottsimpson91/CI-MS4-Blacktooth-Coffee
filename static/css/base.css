@@ -1167,16 +1167,25 @@ select option[value=""] {
     margin: 2rem 0;
 }
 
-.edit-review-button {
+.edit-review-link-button {
     padding-right: 0.5rem;
     padding-top: 1rem;
     font-size: 1.2rem;
     color: #007BFF;
 }
 
-.delete-review-button {
+.delete-review-link-button {
     padding-right: 0.5rem;
     padding-top: 1rem;
     font-size: 1.2rem;
     color: #D9534F;
+}
+
+.edit-review-button {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
 }

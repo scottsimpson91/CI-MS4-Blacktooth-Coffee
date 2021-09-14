@@ -108,9 +108,9 @@
                         <div class="review-content">
                             {% if review.user == request.user or request.user.is_superuser %}
                                 <div class="text-right">
-                                    <a class="btn edit-review-button" href="">Edit Review </a>
+                                    <a class="btn edit-review-link-button" href="{% url 'edit_review' review.id %}">Edit Review </a>
                                     {% if request.user.is_superuser %}
-                                        <a class="btn delete-review-button" href=""> Delete Review</a>
+                                        <a class="btn delete-review-link-button" href=""> Delete Review</a>
                                     {% endif %}
                                 </div>
                             {% endif %}

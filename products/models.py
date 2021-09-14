@@ -61,3 +61,19 @@ class Review(models.Model):
 
     def __str__(self):
         return self.review_title
+
+    def calculate_ratings(self):
+        # Identify product being rated
+
+        # Find all reviews for product
+
+        # Iterate through all reviews
+
+        # Calculate avg of all ratings for reviews
+
+        # Set avg rating to product
+        pass
+
+    def save(self, *args, **kwargs):
+        super().save()
+        self.calculate_ratings()

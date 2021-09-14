@@ -167,3 +167,33 @@ def add_review(request, product_id):
     }
 
     return render(request, context)
+
+
+@login_required
+def edit_review(request, review_id):
+    """ View to allow users to edit their own reviews """
+
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review has been updated')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Review edit failed, Please try again')
+
+    else:
+        form = ReviewForm(instance=review)
+
+    messages.info(request, 'You are editing your review')
+    template = 'products/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+        'product': product,
+    }
+    return render(request, template, context)
