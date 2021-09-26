@@ -42,7 +42,7 @@
                     {% if request.user.is_superuser %}
                         <p class="products-paragraph">
                             <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
-                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link">Delete</a>
+                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link" data-toggle="modal" data-target="#deleteModal">Delete</a>
                         </p>
                     {% endif %}
                     {% if product.category %}
@@ -57,6 +57,25 @@
                     <h4 class="product-details-heading">Variety - {{ product.variety }}</h4>
                     <h4 class="product-details-heading">Process - {{ product.process }}</h4>
                     <h4 class="product-details-heading">Flavour Notes - {{ product.notes }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--======================================== DELETE PRODUCT MODAL ========================================-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-paragraph">Are you sure you want to delete this?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-cancel-button" data-dismiss="modal">Cancel</button>
+                    <a href="{% url 'delete_product' product.id %}" class="btn modal-confirm-button">Delete</a>
                 </div>
             </div>
         </div>
@@ -106,12 +125,32 @@
                 <hr class="heading-hr">
                 <div class="review-section">
                     {% for review in product.reviews.all %}
+<!--======================================== DELETE REVIEW MODAL ========================================-->
+                        <div class="modal fade" id="deleteReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="modal-paragraph">Are you sure you want to delete this?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn modal-cancel-button" data-dismiss="modal">Cancel</button>
+                                        <a href="{% url 'delete_review' review.id %}" class="btn modal-confirm-button">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--======================================== REVIEW MAIN CONTENT ========================================-->
                         <div class="review-content">
                             {% if review.user == request.user or request.user.is_superuser %}
                                 <div class="text-right">
                                     <a class="btn edit-review-link-button" href="{% url 'edit_review' review.id %}">Edit Review </a>
                                     {% if request.user.is_superuser %}
-                                        <a class="btn delete-review-link-button" href="{% url 'delete_review' review.id %}"> Delete Review</a>
+                                        <a class="btn delete-review-link-button" href="{% url 'delete_review' review.id %}" data-toggle="modal" data-target="#deleteReviewModal"> Delete Review</a>
                                     {% endif %}
                                 </div>
                             {% endif %}
@@ -119,6 +158,7 @@
                             <p class="review-paragraph">{{ review.rating }} Stars |  <strong>{{ review.review_title }}</strong></p>
                             <p class="review-paragraph">{{ review.review_body }}</p>
                         </div>
+<!--======================================== REVIEW NO CONTENT ========================================-->
                     {% empty %}
                         <div class="review-no-content">
                             <p class="review-paragraph">There are currently no reviews for this product. Please add one below!</p>
