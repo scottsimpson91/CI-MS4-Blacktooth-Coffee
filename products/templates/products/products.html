@@ -68,12 +68,14 @@
                     </div>
                     <div class="product-body">
                         <a href="{% url 'product_detail' product.id %}" class="product-detail-link">
-                            <h4 class="product-heading">{{ product.name }}</h4>
+                            <h4 class="main-product-heading">{{ product.name }}</h4>
                         </a>
+                        <hr>
+                        <h4 class="product-heading"><i class="fas fa-map-pin product-icon"></i>{{ product.origin.name }}</h4>
                         <h4 class="product-heading">£ {{ product.price }}</h4>
                         {% if product.category %}
                             <a href="{% url 'products' %}?category={{ product.category.name }}" class="category-link">
-                                <h4 class="product-heading"><i class="fas fa-tag category-icon"></i>{{ product.category.friendly_name }}</h4>
+                                <h4 class="product-heading"><i class="fas fa-tag product-icon"></i>{{ product.category.friendly_name }}</h4>
                             </a>
                         {% endif %}
                         <h4 class="product-heading">Rating - {{ product.rating }} / 5</h4>

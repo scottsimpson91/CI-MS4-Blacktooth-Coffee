@@ -163,6 +163,10 @@ a:active:focus {
     margin-top: 4rem;
 }
 
+.homepage-paragraph a {
+    font-size: 1.6rem;
+}
+
 /*--------------------------------------------Footer*/
 footer {
     background-color: #3A413A;
@@ -250,8 +254,16 @@ footer {
 }
 
 .product-heading {
+    font-size: 1.4rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.main-product-heading {
     font-size: 1.6rem;
-    padding: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: bold;
 }
 
 .product-body {
@@ -262,7 +274,7 @@ footer {
     color: #000;
 }
 
-.category-icon {
+.product-icon {
     margin-right: 1rem;
 }
 
