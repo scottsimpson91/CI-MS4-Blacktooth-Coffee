@@ -68,8 +68,7 @@ class Review(models.Model):
         product = Product.objects.get(id=self.product.id)
         # Find all reviews for product
         reviews = Review.objects.all().filter(product=self.product)
-        print(len(reviews))
-        print(reviews)
+
         if len(reviews) > 0:
             # Iterate through all reviews
             count = len(reviews)
