@@ -16,7 +16,12 @@ def blog(request):
 def blog_detail(request, slug):
     """ A view to show individual blog/brewtorials page and comments """
 
-    post = Post.objects.get(slug=slug)
+    try:
+        post = Post.objects.get(slug=slug)
+    
+    except Post.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that post')
+        return redirect(reverse('home'))
 
     return render(request, 'blog/blog_detail.html', {'post': post})
 
@@ -50,7 +55,17 @@ def add_post(request):
 
 @login_required
 def edit_post(request, slug):
-    post = get_object_or_404(Post, slug=slug)
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    try:
+        post = Post.objects.get(slug=slug)
+
+    except Post.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that post')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = BlogForm(request.POST, instance=post)
@@ -81,7 +96,13 @@ def delete_post(request, slug):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    post = get_object_or_404(Post, slug=slug)
+    try:
+        post = Post.objects.get(slug=slug)
+    
+    except Post.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that post')
+        return redirect(reverse('home'))
+
     post.delete()
     messages.success(request, 'Post deleted!')
     return redirect(reverse('blog'))

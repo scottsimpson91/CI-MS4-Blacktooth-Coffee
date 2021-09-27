@@ -61,7 +61,13 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
-    product = get_object_or_404(Product, pk=product_id)
+    try:
+        product = Product.objects.get(pk=product_id)
+
+    except Product.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that product')
+        return redirect(reverse('home'))
+
     form = ReviewForm()
 
     context = {
@@ -107,7 +113,13 @@ def edit_product(request, product_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
+    try:
+        product = Product.objects.get(pk=product_id)
+
+    except Product.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that product')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -173,7 +185,17 @@ def add_review(request, product_id):
 def edit_review(request, review_id):
     """ View to allow users to edit their own reviews """
 
-    review = get_object_or_404(Review, pk=review_id)
+    try:
+        review = Review.objects.get(pk=review_id)
+
+    except Review.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that review')
+        return redirect(reverse('home'))
+
+    if not request.user==review.user:
+        messages.error(request, 'Sorry, you cannot edit posts that are not yours')
+        return redirect(reverse('products'))
+
     product = review.product
 
     if request.method == 'POST':
@@ -201,13 +223,19 @@ def edit_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """ Delete a review if you are a superuser """
+    """ Delete a review if you are a superuser or poster """
 
-    if not request.user.is_superuser:
+    try:
+        review = Review.objects.get(pk=review_id)
+
+    except Review.DoesNotExist:
+        messages.error(request, 'Sorry, we could not find that review')
+        return redirect(reverse('home'))
+
+    if not request.user.is_superuser or not request.user == review.user:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('product_detail'))
+        return redirect(reverse('products'))
 
-    review = get_object_or_404(Review, pk=review_id)
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))

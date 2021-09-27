@@ -65,19 +65,29 @@ class Review(models.Model):
 
     def calculate_ratings(self):
         # Identify product being rated
-        product = get_object_or_404(Product, id=self.product.id)
+        product = Product.objects.get(id=self.product.id)
         # Find all reviews for product
         reviews = Review.objects.all().filter(product=self.product)
-        # Iterate through all reviews
-        count = len(reviews)
-        # Calculate avg of all ratings for reviews
-        sum = 0
-        for rvw in reviews:
-            sum += rvw.rating
-        # Set avg rating to product
-        product.rating = sum/count
+        print(len(reviews))
+        print(reviews)
+        if len(reviews) > 0:
+            # Iterate through all reviews
+            count = len(reviews)
+            # Calculate avg of all ratings for reviews
+            sum = 0
+            for rvw in reviews:
+                sum += rvw.rating
+            # Set avg rating to product
+            product.rating = sum/count
+        else:
+            product.rating = None
+            
         product.save()
 
     def save(self, *args, **kwargs):
         super().save()
+        self.calculate_ratings()
+
+    def delete(self, *args, **kwargs):
+        super().delete()
         self.calculate_ratings()

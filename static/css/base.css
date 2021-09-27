@@ -1229,11 +1229,13 @@ select option[value=""] {
     min-height: 75vh;
     margin-bottom: 5rem;
     margin-top: 5rem;
+    text-align: center;
 }
 
 .error-main-heading {
     font-size: 1.8rem;
     margin: 1rem 0;
+    text-align: center;
 }
 
 .return-home-button {
