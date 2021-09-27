@@ -6,7 +6,7 @@
 
 
 
-![](readme_docs\homepage-readme-image.jpg)
+![Main README IMAGE](readme_docs\homepage-readme-image.jpg)
 
 
 
@@ -264,7 +264,7 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 
 
-![](readme_docs\original-db-schema.jpg)
+![Original DB Schema](readme_docs\original-db-schema.jpg)
 
 
 
@@ -276,43 +276,43 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 ###### Home Page
 
-![](readme_docs\wireframes\wireframe-home-page.jpg)
+![Wireframe Home Page](readme_docs\wireframes\wireframe-home-page.jpg)
 
 
 
 ###### Home Page - Scrolled
 
-![](readme_docs\wireframes\wireframe-home-page-scrolled.jpg)
+![Wireframe Home Page Scrolled](readme_docs\wireframes\wireframe-home-page-scrolled.jpg)
 
 
 
 ###### Home Page - Bottom
 
-![](readme_docs\wireframes\wireframe-home-page-bottom.jpg)
+![Wireframe Home Page Bottom](readme_docs\wireframes\wireframe-home-page-bottom.jpg)
 
 
 
 ###### Products Page
 
-![](readme_docs\wireframes\wireframe-products-page.jpg)
+![Wirefame Products Page](readme_docs\wireframes\wireframe-products-page.jpg)
 
 
 
 ###### Profile Page
 
-![](readme_docs\wireframes\wireframe-profile-page.jpg)
+![Wireframe Profile Page](readme_docs\wireframes\wireframe-profile-page.jpg)
 
 
 
 ###### About Us Page
 
-![](readme_docs\wireframes\wireframe-about-us-page.jpg)
+![Wireframe About Us Page](readme_docs\wireframes\wireframe-about-us-page.jpg)
 
 
 
 ###### Contact Us Page
 
-![](readme_docs\wireframes\wireframe-contact-us-page.jpg)
+![Wireframe Contact Us Page](readme_docs\wireframes\wireframe-contact-us-page.jpg)
 
 
 
