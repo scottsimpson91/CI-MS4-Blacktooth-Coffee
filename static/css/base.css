@@ -1223,3 +1223,23 @@ select option[value=""] {
     font-weight: bold;
     margin-top: 2rem;
 }
+
+/*--------------------------------------------Error Pages*/
+.error-container {
+    min-height: 75vh;
+    margin-bottom: 5rem;
+}
+
+.error-main-heading {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.return-home-button {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    background-color: #FFD966;
+    border: 2px solid #000;
+    font-weight: bold;
+    margin-top: 2rem;
+}
