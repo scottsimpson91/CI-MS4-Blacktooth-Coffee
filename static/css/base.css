@@ -275,7 +275,7 @@ footer {
 }
 
 .product-icon {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .category-link {
@@ -1228,6 +1228,7 @@ select option[value=""] {
 .error-container {
     min-height: 75vh;
     margin-bottom: 5rem;
+    margin-top: 5rem;
 }
 
 .error-main-heading {
