@@ -78,7 +78,7 @@
                                 <h4 class="product-heading"><i class="fas fa-tag product-icon"></i>{{ product.category.friendly_name }}</h4>
                             </a>
                         {% endif %}
-                        <h4 class="product-heading">Rating - {{ product.rating }} / 5</h4>
+                        <h4 class="product-heading"><i class="fas fa-star"></i>Rating - {{ product.rating }} / 5</h4>
                         {% if request.user.is_superuser %}
                             <p class="products-paragraph">
                                 <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 

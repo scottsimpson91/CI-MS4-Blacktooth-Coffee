@@ -6,7 +6,7 @@
 
 
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\homepage-readme-image.jpg)
+![](readme_docs\homepage-readme-image.jpg)
 
 
 
@@ -264,7 +264,7 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\original-db-schema.jpg)
+![](readme_docs\original-db-schema.jpg)
 
 
 
@@ -276,43 +276,43 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 ###### Home Page
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-home-page.jpg)
+![](readme_docs\wireframes\wireframe-home-page.jpg)
 
 
 
 ###### Home Page - Scrolled
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-home-page-scrolled.jpg)
+![](readme_docs\wireframes\wireframe-home-page-scrolled.jpg)
 
 
 
 ###### Home Page - Bottom
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-home-page-bottom.jpg)
+![](readme_docs\wireframes\wireframe-home-page-bottom.jpg)
 
 
 
 ###### Products Page
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-products-page.jpg)
+![](readme_docs\wireframes\wireframe-products-page.jpg)
 
 
 
 ###### Profile Page
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-profile-page.jpg)
+![](readme_docs\wireframes\wireframe-profile-page.jpg)
 
 
 
 ###### About Us Page
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-about-us-page.jpg)
+![](readme_docs\wireframes\wireframe-about-us-page.jpg)
 
 
 
 ###### Contact Us Page
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\wireframes\wireframe-contact-us-page.jpg)
+![](readme_docs\wireframes\wireframe-contact-us-page.jpg)
 
 
 
@@ -542,7 +542,7 @@ The website works well on all mobile devices from 320px and upwards.
 
 
 
-![](C:\Users\Scott\Documents\Coding\CI-MS4\readme_docs\google-mobile-friendly-test.jpg)
+![](readme_docs\google-mobile-friendly-test.jpg)
 
 
 
