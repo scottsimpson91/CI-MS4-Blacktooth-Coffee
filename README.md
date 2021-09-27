@@ -6,7 +6,7 @@
 
 
 
-![Main README IMAGE](readme_docs\homepage-readme-image.jpg)
+![Main README IMAGE](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/homepage-readme-image.jpg)
 
 
 
@@ -264,7 +264,7 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 
 
-![Original DB Schema](readme_docs\original-db-schema.jpg)
+![Original DB Schema](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/original-db-schema.jpg)
 
 
 
@@ -276,43 +276,43 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 ###### Home Page
 
-![Wireframe Home Page](readme_docs\wireframes\wireframe-home-page.jpg)
+![Wireframe Home Page](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-home-page-bottom.jpg)
 
 
 
 ###### Home Page - Scrolled
 
-![Wireframe Home Page Scrolled](readme_docs\wireframes\wireframe-home-page-scrolled.jpg)
+![Wireframe Home Page Scrolled](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-home-page-scrolled.jpg)
 
 
 
 ###### Home Page - Bottom
 
-![Wireframe Home Page Bottom](readme_docs\wireframes\wireframe-home-page-bottom.jpg)
+![Wireframe Home Page Bottom](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-home-page-bottom.jpg)
 
 
 
 ###### Products Page
 
-![Wirefame Products Page](readme_docs\wireframes\wireframe-products-page.jpg)
+![Wirefame Products Page](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-products-page.jpg)
 
 
 
 ###### Profile Page
 
-![Wireframe Profile Page](readme_docs\wireframes\wireframe-profile-page.jpg)
+![Wireframe Profile Page](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-profile-page.jpg)
 
 
 
 ###### About Us Page
 
-![Wireframe About Us Page](readme_docs\wireframes\wireframe-about-us-page.jpg)
+![Wireframe About Us Page](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-about-us-page.jpg)
 
 
 
 ###### Contact Us Page
 
-![Wireframe Contact Us Page](readme_docs\wireframes\wireframe-contact-us-page.jpg)
+![Wireframe Contact Us Page](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/wireframes/wireframe-contact-us-page.jpg)
 
 
 
@@ -542,7 +542,7 @@ The website works well on all mobile devices from 320px and upwards.
 
 
 
-![](readme_docs\google-mobile-friendly-test.jpg)
+![Google Mobile Friendly Test](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/google-mobile-friendly-test.jpg)
 
 
 
