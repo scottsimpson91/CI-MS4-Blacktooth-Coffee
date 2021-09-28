@@ -4,12 +4,15 @@ from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
+    """ Product Form """
 
     class Meta:
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image',
+                             required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,6 +25,7 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    """ Review form to allow users to leave reviews on products """
 
     class Meta:
         model = Review

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from .models import Post
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -18,7 +18,7 @@ def blog_detail(request, slug):
 
     try:
         post = Post.objects.get(slug=slug)
-    
+
     except Post.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that post')
         return redirect(reverse('home'))
@@ -41,7 +41,9 @@ def add_post(request):
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('blog_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add post. Please ensure the form is valid.')
     else:
         form = BlogForm()
 
@@ -55,6 +57,7 @@ def add_post(request):
 
 @login_required
 def edit_post(request, slug):
+    """ View to edit Blog/Brewtorials Post """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -91,6 +94,7 @@ def edit_post(request, slug):
 
 @login_required
 def delete_post(request, slug):
+    """ View to delete Blog/Brewtorials Post """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -98,7 +102,7 @@ def delete_post(request, slug):
 
     try:
         post = Post.objects.get(slug=slug)
-    
+
     except Post.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that post')
         return redirect(reverse('home'))

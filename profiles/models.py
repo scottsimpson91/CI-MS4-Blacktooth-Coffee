@@ -10,6 +10,7 @@ class UserProfile(models.Model):
     """
     A user profile model for maintaining default
     delivery information and order history
+    - See changes in README for reason PEP8 errors
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20, null=True,

@@ -12,22 +12,22 @@
     </div>
 <!--======================================== BLOG/BREWTORIALS CONTENT ========================================-->
     <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 mb-2">
-                <div class="blog-main-content">
-                    <h3 class="blog-title">{{ post.title }}</h3>
-                    {% if request.user.is_superuser %}
-                        <hr>
-                        <div class="blog-paragraph">
-                            <a href="{% url 'edit_post' post.slug %}" class="edit-post-button">Edit Post</a> | 
-                            <a href="{% url 'delete_post' post.slug %}" class="delete-post-button">Delete Post</a>
-                        </div>
-                    {% endif %}
+        <div class="col-12 col-md-8 offset-md-2 mb-2">
+            <div class="blog-main-content">
+                <h3 class="blog-title">{{ post.title }}</h3>
+                {% if request.user.is_superuser %}
                     <hr>
-                    <p class="blog-date">Posted at {{ post.date_added }}</p>
-                    <hr>
-                    <p class="blog-paragraph">{{ post.body|linebreaksbr }}</p>
-                </div>
+                    <div class="blog-paragraph">
+                        <a href="{% url 'edit_post' post.slug %}" class="edit-post-button">Edit Post</a> | 
+                        <a href="{% url 'delete_post' post.slug %}" class="delete-post-button">Delete Post</a>
+                    </div>
+                {% endif %}
+                <hr>
+                <p class="blog-date">Posted at {{ post.date_added }}</p>
+                <hr>
+                <p class="blog-paragraph">{{ post.body|linebreaksbr }}</p>
             </div>
+        </div>
     </div>
 </div>
 {% endblock %}

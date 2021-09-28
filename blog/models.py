@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Post(models.Model):
+    """ Model to post new Blog/Brewtorials Post """
+
     title = models.CharField(max_length=255)
     slug = models.SlugField()
     intro = models.TextField()

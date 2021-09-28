@@ -1,7 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 
 class Category(models.Model):
@@ -20,6 +19,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """ Product model - See changes in README for reason PEP8 errors """
+
     category = models.ForeignKey('Category', null=True,
                                  blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
@@ -40,6 +41,8 @@ class Product(models.Model):
 
 
 class Review(models.Model):
+    """ Review Model """
+
     RATING = [
         (1, '1'),
         (2, '2'),
@@ -80,7 +83,7 @@ class Review(models.Model):
             product.rating = sum/count
         else:
             product.rating = None
-            
+
         product.save()
 
     def save(self, *args, **kwargs):
