@@ -42,7 +42,7 @@
                     {% if request.user.is_superuser %}
                         <p class="products-paragraph">
                             <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
-                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link" data-toggle="modal" data-target="#deleteModal">Delete</a>
+                            <a href="{% url 'delete_product' product.id %}" class="products-delete-link" data-toggle="modal" data-target="#deleteModal_{{ forloop.counter }}">Delete</a>
                         </p>
                     {% endif %}
                     {% if product.category %}
@@ -62,7 +62,7 @@
         </div>
     </div>
 <!--======================================== DELETE PRODUCT MODAL ========================================-->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteModal_{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal_{{ forloop.counter }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -126,7 +126,7 @@
                 <div class="review-section">
                     {% for review in product.reviews.all %}
 <!--======================================== DELETE REVIEW MODAL ========================================-->
-                        <div class="modal fade" id="deleteReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="deleteReviewModal_{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="deleteReviewModal_{{ forloop.counter }}" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -149,7 +149,7 @@
                             {% if review.user == request.user or request.user.is_superuser %}
                                 <div class="text-right">
                                     <a class="btn edit-review-link-button" href="{% url 'edit_review' review.id %}">Edit Review </a>
-                                        <a class="btn delete-review-link-button" href="{% url 'delete_review' review.id %}" data-toggle="modal" data-target="#deleteReviewModal"> Delete Review</a>
+                                        <a class="btn delete-review-link-button" href="{% url 'delete_review' review.id %}" data-toggle="modal" data-target="#deleteReviewModal_{{ forloop.counter }}"> Delete Review</a>
                                 </div>
                             {% endif %}
                             <p class="review-paragraph"><small>by {{ review.user }} on {{ review.date_added|date:"d-m-Y" }}</small></p>

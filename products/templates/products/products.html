@@ -45,7 +45,7 @@
             <div class="col-12 results-container">
                 <p class="results-text">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        <a href="{% url 'products' %}">Products Home</a> | </span>
+                        <a href="{% url 'products' %}">Products Home</a> | 
                     {% endif %}
                     {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
@@ -84,13 +84,13 @@
                         {% if request.user.is_superuser %}
                             <p class="products-paragraph">
                                 <a href="{% url 'edit_product' product.id %}" class="products-edit-link">Edit</a> | 
-                                <a href="{% url 'delete_product' product.id %}" class="products-delete-link" data-toggle="modal" data-target="#deleteModal">Delete</a>
+                                <a href="{% url 'delete_product' product.id %}" class="products-delete-link" data-toggle="modal" data-target="#deleteModal_{{ forloop.counter }}">Delete</a>
                             </p>
                         {% endif %}
                     </div>
                 </div>
 <!--======================================== DELETE PRODUCT MODAL - FROM BOOTSTRAP WEBSITE ========================================-->
-                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal fade" id="deleteModal_{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal_{{ forloop.counter }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
