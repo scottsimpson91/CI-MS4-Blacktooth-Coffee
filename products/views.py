@@ -73,7 +73,7 @@ def product_detail(request, product_id):
 
     except Product.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that product')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     form = ReviewForm()
 
@@ -91,7 +91,7 @@ def add_product(request):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -120,14 +120,14 @@ def edit_product(request, product_id):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     try:
         product = Product.objects.get(pk=product_id)
 
     except Product.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that product')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -158,7 +158,7 @@ def delete_product(request, product_id):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
@@ -201,7 +201,7 @@ def edit_review(request, review_id):
 
     except Review.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that review')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     if not request.user == review.user:
         messages.error(
@@ -243,7 +243,7 @@ def delete_review(request, review_id):
 
     except Review.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that review')
-        return redirect(reverse('home'))
+        return redirect(reverse('products'))
 
     if not request.user.is_superuser or not request.user == review.user:
         messages.error(request, 'Sorry, only store owners can do that.')

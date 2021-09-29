@@ -21,7 +21,7 @@ def blog_detail(request, slug):
 
     except Post.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that post')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     return render(request, 'blog/blog_detail.html', {'post': post})
 
@@ -32,7 +32,7 @@ def add_post(request):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
@@ -61,14 +61,14 @@ def edit_post(request, slug):
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     try:
         post = Post.objects.get(slug=slug)
 
     except Post.DoesNotExist:
         messages.error(request, 'Sorry, we could not find that post')
-        return redirect(reverse('home'))
+        return redirect(reverse('blog'))
 
     if request.method == 'POST':
         form = BlogForm(request.POST, instance=post)
