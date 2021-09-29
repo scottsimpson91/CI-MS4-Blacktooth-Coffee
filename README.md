@@ -755,7 +755,7 @@ The W3C Markup Validator, W3C CSS Validator, JSHint and PEP8 Online services wer
 
 [PEP8 Online](http://pep8online.com/)
 
-* **Line too long **
+* **Line too long**
 
   * These was left in as attempts to make the line shorter resulted in errors mentioned above in changes - as this does not affect the application it was left in
 
@@ -763,7 +763,7 @@ The W3C Markup Validator, W3C CSS Validator, JSHint and PEP8 Online services wer
 
     
 
-* **Avoid using null=True on string-based fields such as CharField - profiles/models.py**
+* **Avoid using null=True on string-based fields such as CharField**
 
   * These were left as attempts to change/remove null=True resulted in errors mentioned above in changes - as this does not affect the application they were left in
 
