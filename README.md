@@ -1,4 +1,4 @@
-# [Blacktooth Coffee]()
+# [Blacktooth Coffee](https://blacktooth-coffee.herokuapp.com/)
 
 
 
@@ -23,6 +23,8 @@ The website will incorporate all CRUD (Create, Read, Update Delete) functions an
 * This website is for educational purposes only and is part of a Full Stack Development Course
 
 * No commercial revenue is generated from this project
+
+* When registering - please check your SPAM folder for emails
 
   
 
@@ -66,6 +68,9 @@ Blacktooth Coffee is a premium coffee delivery service where users are able to p
 * "I want to know that my coffee is being sourced responsibly and the farmers are being paid fairly"
 * "I want to be able to search for products using different criteria such as region or name"
 * "I want to be able to contact the store owner if necessary"
+* "I want to be able to filter products using a variety of methods such as name, rating etc."
+* "I want to be able to leave reviews on products"
+* "I want to be able to find brew methods on how to use the product I purchased"
 
 
 
@@ -100,6 +105,8 @@ The aim of the project was to create a full stack e-commerce store for a premium
 * Easy to understand checkout process
 * Easy to see feedback being provided to the user when different actions are being made
 * Easy to find reviews on various products being offered
+* Easy to sort products in various ways
+* Easy to find method of brewing and making the coffee in the correct way
 
 
 
@@ -108,7 +115,7 @@ The aim of the project was to create a full stack e-commerce store for a premium
 - Easy to create new products and add it to the website
 - Easy to edit products already on the website
 - Easy to delete products already on the website
-- Easy to use CRUD function for all reviews on the website
+- Easy to use CRUD functions for all aspects of managing the website
 - Easy to use admin interface where all essential information can be found
 
 
@@ -258,13 +265,25 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 
 
-###### Data Schema
+##### Data Schema
 
-[dbdiagram](https://dbdiagram.io/home) was used to help design the relational database. The original design is below:
+[dbdiagram](https://dbdiagram.io/home) was used to help design the relational database. The original design is below along with the updated and current one:
 
 
+
+###### Original Schema
 
 ![Original DB Schema](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/original-db-schema.jpg)
+
+
+
+Once the project was finished, [DbVisualizer](https://www.dbvis.com/) was used to get the schema for the completed project, which is below:
+
+
+
+###### Current Schema
+
+![Original DB Schema](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/current-db-schema.jpg)
 
 
 
@@ -348,18 +367,25 @@ A selection of quality images were used to be engaging and draw users in and sho
 * More searching and filter options
 * Pagination for products pages when more are added
 * A proper contact form to contact the site owner
+* Reviews will be updated at a later date to identify if the review came from a verified purchaser of the product
+* Link between brew methods and the product will be implemented at a later date
 
 
 
 ## <a name="changes">Changes</a>
 
 * The original idea was to create a subscription service, however this was later changed to just buying items at once to begin with - subscription service is something that will be added at a later date
-* There was a point where the secret keys were available to the public due to an error, however these were all changed to secure the application
+* There was a point where the secret keys were available to the public due to an error, however these keys were all changed to secure the application
 * A contact form was originally going to be used to contact the store owner, however this was changed and various tags were implemented to immediately open a new email/start a call
-* There were some additional models that needed to be added from the original Wireframes design due to project requirements, this meant adding in a Reviews app and Brewtorials/Blog app
-* There were a number of changes to the original DB schema due to evolving circumstance of the project and the need for additional applications within the project
+* There were some additional models that needed to be added from the original Wireframes design due to project requirements, this meant adding in a Reviews app and Brewtorials/Blog app, hence why there are no wireframes/data in the original DB schema
+* There were a number of changes to the original DB schema due to evolving circumstances of the project and the need for additional applications within the project - A comparison of both is are above under the Data Schema section
+* There were some changes to the colour scheme due to change in preference from the developer - this was mainly done to give the website a more professional feel
 
 
+
+* When attempting to make the code PEP8 compliant, there were a number of issues with the webhook which resulted in the developer having to do a hard rollback in Git and also reset the database, hence why there are a number of recent migrations. These PEP8 issues were left in due to them not affecting the project.
+
+  
 
 ## <a name="technologies-used">Technologies Used</a>
 
@@ -370,45 +396,25 @@ A selection of quality images were used to be engaging and draw users in and sho
   The following Python modules were used within this project:
 
   * asgiref==3.3.4
-
   * boto3==1.17.88
-
   * botocore==1.20.88
-
   * dj-database-url==0.5.0
-
-  * Django==3.2
-
+  * Django==3.2.7
   * django-allauth==0.44.0
-
   * django-countries==7.1
-
   * django-crispy-forms==1.11.2
-
   * django-storages==1.11.1
-
   * gunicorn==20.1.0
-
   * jmespath==0.10.0
-
   * oauthlib==3.1.0
-
-  * Pillow==8.2.0
-
+  * Pillow==8.3.2
   * psycopg2-binary==2.8.6
-
   * PyJWT==2.0.1
-
   * python3-openid==3.2.0
-
   * pytz==2021.1
-
   * requests-oauthlib==1.3.0
-
   * s3transfer==0.4.2
-
-  * sqlparse==0.4.1
-
+  * sqlparse==0.4.2
   * stripe==2.56.0
 
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
@@ -455,6 +461,8 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 * [dbdiagram](https://dbdiagram.io/home)
 
+* [DbVisualizer](https://www.dbvis.com/)
+
   
 
 ## <a name="testing">Testing</a>
@@ -498,9 +506,222 @@ A selection of quality images were used to be engaging and draw users in and sho
 
 
 
+* "I want to be able to filter products using a variety of methods such as name, rating etc."
+
+  * Sort by box was included with a number of methods to search including name, price, rating and category
+
+    
+
+* "I want to be able to leave reviews on products"
+
+  * Review system was implemented for users who were logged in
+  * Due to be upgraded for verified purchases at a later date
+
+  
+
+* "I want to be able to find brew methods on how to use the product I purchased"
+
+  * Brewtorials/Blogs were implemented so users could find this information
+  * Due to be integrated together at a later date
+
+
+
 ##### General Testing
 
+* Vulnerabilities relating to users being able to force their way into CRUD pages without proper authenticated/checks
+  * This was rectified by adding try/except blocks, redirects and DoesNotExist checks to various views including:
+    *  product_detail 
+    *  edit_product
+    *  edit_review
+    *  delete_review
+    *  blog_detail
+    *  edit_post
+    *  delete_post
 
+
+
+###### Home Page / Navbar
+
+* h1 tag/logo in top left of navbar returns user to Home page
+* Banner on Home page takes user to Products page
+* All navbar links work and take users to appropriate locations
+* Appropriate options for Product Management / Register / Login / My Profile / Logout appear depending on the users status
+* All links on Home page take users to appropriate locations and open a new tab where told to
+* All toast messages display as intended
+
+
+
+###### Products Page
+
+* All products are showing with appropriate prices, locations, images, costs etc
+* All products link to their more detailed page when clicked
+* All Sort By options work as intended
+* Search function works as intended and filters appears when applied
+  * India - No results
+  * Balmaadi - Balmaadi product showed (Product Name)
+  * Chocolate - All products shown (Tasting Notes)
+* CRUD functionality appears for super users only and opens to the appropriate pages/modals
+* All toast messages display as intended
+
+
+
+###### Product Details Page
+
+* CRUD functionality appears for super users only and opens to the appropriate pages/modals
+* All appropriate information is pulled from the DB and shown to the user depending on the product
+* Quantity input works as intended
+* All buttons work
+* Reviews not shown if there are no reviews, and reviews shown if there are
+* Submit review option only applies to those logged in and a message saying to login appears if users are not logged in
+* Review forms works as intended
+* CRUD functionality appears on the reviews once submitted - users are only able to edit/delete their own
+* All toast messages display as intended
+* Normal user is unable to edit or delete other reviews
+* Successfully added a review and the rating updated and averaged all reviews into one score
+* Delete Review modal works as intended
+
+
+
+###### Edit Review Page
+
+* Opens as intended and able to update the review with no issues
+* Successfully edited a review and the rating updated and averaged all reviews into one score
+
+
+
+###### Shopping Bag Page
+
+* Quantity input works as intended and updates/removes as required
+* Delivery threshold is showing where appropriate
+* All buttons work as intended
+* All toast messages display as intended
+* Empty bag displays as intended if there are no items in the bag
+
+
+
+###### Checkout Page
+
+* All items that were in the bag appear on the checkout page as intended
+* Payment works as intended and loading spinner appears as required
+* Page redirects to checkout_success as intended
+
+
+
+###### Checkout Success
+
+* All toast messages display as intended
+* Confirmation email came through straight away and was formatted correctly
+* All information input on to the previous page at Checkout was correct
+* All buttons work as intended
+
+
+
+###### Profile Page
+
+* All information from a previous order saved correctly to the profile
+* All previous orders display for the user and can be clicked into for a summary of the order
+* All buttons work as intended - information within the profile was easily updated
+* All toast messages display as intended
+
+
+
+###### Register Page
+
+* Was able to sign up to the website easily
+* Form validation works fine
+  * Tested email address with no @
+  * Tested creating a username with 1 character
+  * Tested creating a new user with an email that already exists
+  * Tested creating a user with a username that already exists but with a different email
+* All toast messages display as intended
+* Email confirmation came through straightaway, but it goes to SPAM folder
+* Link in email works fine and takes the user to the intended page to confirm their email
+
+
+
+###### Login/Log Out Page
+
+* All links work as intended and open the correct pages
+* All toast messages display as intended
+* Successfully logged in and out of both admin and test account
+* Validation works:
+  * Tried to sign in with an incorrect username and password
+
+
+
+###### Password Reset Page
+
+* All links work as intended
+* All toast messages display as intended
+* Email came through straight away and link opened to correct page
+* Change Password page button appeared in lower case - this was changed to display correctly
+* Tried to login after changing password using the old password and got denied
+* Logged in with new password successfully
+
+
+
+###### Brewtorials/Blog Page
+
+* All links open as intended and extend to the correct blog post when 'READ MORE' is clicked
+* CRUD commands do not appear for normal users but do for super user's
+* All toast messages display as intended
+
+
+
+###### Brewtorials/Blog Detail Page
+
+* Edit Post button works as intended
+* Delete Post button did not trigger a modal as it was missing, this was added in
+* All toast messages display as intended
+* Able to successfully delete a post
+
+
+
+###### Create Brewtorials/Blog Post Page
+
+* Link to open this page is only available to super users'
+* Form opens as intended and validation works
+* Able to successfully post something to the website with no issues
+* All toast messages display as intended
+
+
+
+###### Edit Brewtorials/Blog Post Page
+
+* Link to open this page is only available to super users'
+* All toast messages display as intended
+* Form validation works as intended
+* Able to successfully edit a post
+
+
+
+###### About Us Page
+
+* All information displayed as intended
+* Link opens to the correct page
+
+
+
+###### Contact Us Page
+
+* All links open as intended
+
+
+
+###### Product Management/Add Product Page
+
+* Link only displays for super user's as intended
+* Successfully added product with no picture and the correct image displayed
+* Successfully edited the product
+* Successfully deleted the product with the modal working fine
+* All toast messages display as intended
+
+
+
+###### Custom Error Pages
+
+* Both appear as normal and required
+* Links back to the Home page work as intended
 
 
 
@@ -514,17 +735,43 @@ The W3C Markup Validator, W3C CSS Validator, JSHint and PEP8 Online services wer
 
 
 
+![HTML Validator Checks](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/html-validator-results.jpg)
+
+
+
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+
+
+![CSS Validator Checks](https://github.com/scottsimpson91/CI-MS4-Blacktooth-Coffee/blob/master/readme_docs/css-validator-results.jpg)
 
 
 
 [JSHint](https://jshint.com/)
 
+* All fixed after using this - the main issue were missing semi-colons
+
 
 
 [PEP8 Online](http://pep8online.com/)
 
+* **Line too long **
 
+  * These was left in as attempts to make the line shorter resulted in errors mentioned above in changes - as this does not affect the application it was left in
+
+  * Some of these errors are occurring in the project level settings, which are generated automatically and were left alone
+
+    
+
+* **Avoid using null=True on string-based fields such as CharField - profiles/models.py**
+
+  * These were left as attempts to change/remove null=True resulted in errors mentioned above in changes - as this does not affect the application they were left in
+
+    
+
+* **Instance of 'Order' has no 'lineitems' member**
+
+  * There are a few instance of 'x' not having a member, however this is providing a false positive, as the object is creating dynamically and exists at the time of access - Guidance found - [Here](http://pylint-messages.wikidot.com/messages:e1101)
 
 
 
@@ -559,43 +806,44 @@ The following devices were used:
 * iMac - OS X Yosemite - Safari Browser
 * iPhone 11 Pro Max - Safari Browser
 * Sony Vaio Laptop - Windows 8 - Chrome Browser
-* Apple Macbook Pro 16 - Chrome Browser
+* Apple MacBook Pro 16 - Chrome Browser
 
 
 
 ##### Errors/Bugs During Device Testing
 
 * iPhone X - Chrome Browser
-  * 
+  * No issues
 
 
 
 * iPad Mini / iPad Air - Safari Browser
-  * 
+  * No issues
 
 
 
 * Samsung Galaxy S9 - Samsung Internet Browser
-  * 
+  * No issues
 
 
 
 * iMac - OS X Yosemite - Safari Browser
-  * 
+  * No issues
 
 
 
 * iPhone 11 Pro Max - Safari Browser
-  * 
+  * No issues
 
 
 
 * Sony Vaio Laptop - Windows 8 - Chrome Browser
-  * 
+  * No issues
 
 
 
 * Apple MacBook Pro 16 - Chrome Browser
+  * No issues
 
 
 
@@ -603,19 +851,19 @@ The following devices were used:
 
 [W3C Markup Validator](https://validator.w3.org/) 
 
-* 
+* Error - Stray end tag <i>
 
 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-* 
+* None
 
 
 
 ##### Known Bugs
 
-* 
+* contact/views.py - contact view was left in there to be implemented at a later date, this does not impact the project in anyway so it was left
 
 
 
@@ -713,7 +961,7 @@ pip3 install psycopg2
 6. Create a `Procfile` (note the capital P), and add the following,
 
 ```
-web: gunicorn moose_juice.wsgi:application
+web: gunicorn blacktooth_coffee.wsgi:application
 ```
 
 1. Disable Heroku from collecting static files - `heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>`
@@ -893,11 +1141,11 @@ pip3 freeze > requirements.txt
 
 * ###### [Code Institute](https://codeinstitute.net/)
 
-    * The main elements of the project were taken from the Boutique Ado Walkthrough and adapted to suit the requirements of this project
+  * The main elements of the project were taken from the Boutique Ado Walkthrough and adapted to suit the requirements of this project
 
 * ###### [YouTube](https://www.youtube.com/)
 
-    * Guidance on how to build a blog application in Django - [Here](https://www.youtube.com/watch?v=m3hhLE1KR5Q)
+  * Guidance on how to build a blog application in Django - [Here](https://www.youtube.com/watch?v=m3hhLE1KR5Q)
 
 * ###### [Django](https://docs.djangoproject.com/en/3.2/)
 
@@ -924,7 +1172,7 @@ I would like to thank the following:
 
 * **CI Staff** and **Slack Community** for their assistance with minor coding issues
 
-* **Benjamin Kavanagh** for his help working through various minor coding issues
+* **Benjamin Kavanagh** for his help working through a number of coding issues and for thoroughly testing and trying to break my website
 
 * **Harry Dhillon** for his help working through various minor coding issues and for helping me with the deployment section of this README
 
