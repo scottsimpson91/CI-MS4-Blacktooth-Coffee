@@ -19,7 +19,7 @@
                     <hr>
                     <div class="blog-paragraph">
                         <a href="{% url 'edit_post' post.slug %}" class="edit-post-button">Edit Post</a> | 
-                        <a href="{% url 'delete_post' post.slug %}" class="delete-post-button" data-toggle="modal" data-target="#deleteModal_{{ forloop.counter }}">Delete Post</a>
+                        <a href="{% url 'delete_post' post.slug %}" class="delete-post-button" data-toggle="modal" data-target="#deleteModal">Delete Post</a>
                     </div>
                 {% endif %}
                 <hr>
@@ -30,10 +30,11 @@
         </div>
     </div>
 <!--======================================== DELETE POST MODAL ========================================-->
-    <div class="modal fade" id="deleteModal_{{ forloop.counter }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal_{{ forloop.counter }}" aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deletePostLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h5 class="modal-title" id="deletePostLabel">Delete</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
