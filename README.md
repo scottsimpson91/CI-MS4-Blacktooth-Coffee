@@ -369,6 +369,7 @@ Once the project was finished, [DbVisualizer](https://www.dbvis.com/) was used t
 * A proper contact form to contact the site owner
 * Reviews will be updated at a later date to identify if the review came from a verified purchaser of the product
 * Link between brew methods and the product will be implemented at a later date
+* Improve accessibility across the website using the Wave checker [Wave Browser Extension](https://wave.webaim.org/extension/)
 
 
 
@@ -773,6 +774,9 @@ The W3C Markup Validator, W3C CSS Validator, JSHint and PEP8 Online services wer
 
   * There are a few instance of 'x' not having a member, however this is providing a false positive, as the object is creating dynamically and exists at the time of access - Guidance found - [Here](http://pylint-messages.wikidot.com/messages:e1101)
 
+[Wave Browser Extension](https://wave.webaim.org/extension/)
+
+* Wave was going to be used to improve accessibility, however I have had issues opening a workspace on Gitpod (30/09/21), so was unable to make these changes. These will be implemented at a later date as mentioned in Future Improvements
 
 
 ##### Devices
